@@ -1,0 +1,138 @@
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+// Color palette
+
+$color-background-light: #f0f0f0;
+$color-background-dark: #000;
+$color-black: #000;
+$color-blue: #1b1e3c;
+$color-blue-light: #71c5c7;
+$color-grey-light: #cdcbcc;
+$color-grey-dark: #4e4e4e;
+$color-pink: #e980ac;
+$color-purple: #4a326c;
+$color-red: #e6324b;
+$color-teal-turquoise: #42b494;
+$color-white: #fff;
+
+// Within slides
+
+$color-1: #D4F1FF;
+$color-2: #AFDCFB;
+$color-3: #93C0E7;
+
+// Override theme settings (see ../template/settings.scss)
+
+$backgroundColor: $color-background-light;
+$mainColor: $color-black;
+$headingColor: $color-black;
+$mainFontSize: 38px;
+$mainFont: "Georgia", "Cambria", "Times New Roman", "Times", serif;
+$headingFont: "Georgia", "Cambria", "Times New Roman", "Times", serif;
+$headingTextShadow: 10px 10px 10px $color-white;
+$headingLetterSpacing: normal;
+$headingTextTransform: none;
+$headingFontWeight: 600;
+$linkColor: $color-red;
+$linkColorHover: darken($linkColor, 20%);
+$selectionBackgroundColor: $color-red;
+$heading1Size: 2.5em;
+$heading2Size: 1.6em;
+$heading3Size: 1.3em;
+$heading4Size: 1.0em;
+
+// Theme template ------------------------------
+@import "../template/theme";
+
+// Overrides -----------------------------------
+
+.reveal {
+	.slides section {
+		padding: 0;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		text-shadow: 2px 2px 10px $color-white;
+	}
+
+	.has-dark-background {
+		&, h1, h2, h3, h4, h5, h6 {
+			color: #fff;
+			text-shadow: 2px 2px 10px $color-black;
+		}
+	}
+
+	pre {
+		&.highlight {
+			padding: 20px;
+			background: $color-grey-dark;
+			box-shadow: none;
+			color: $color-white;
+		}
+
+		&.full {
+			margin: 0;
+			width: 100%;
+		}
+
+		.faded {
+			opacity: .5;
+		}
+
+		.emphasis {
+			background-color: #000;
+		}
+	}
+
+	.tiles {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+
+		.tile {
+			box-sizing: border-box;
+			flex-basis: 50%;
+			flex-grow: 1;
+		}
+	}
+
+	iframe {
+		border: 3px solid #666;
+	}
+
+	ul ul {
+		list-style-type: circle;
+	}
+
+	.space-m {
+		margin: 10px;
+	}
+
+	.strike {
+		text-decoration: line-through;
+	}
+
+	table tr:last-child th {
+		border-bottom: 0;
+	}
+
+	img.inline {
+		border: 0;
+		box-shadow: none;
+		background: transparent;
+	}
+
+	.slides section .fragment.current-display {
+		opacity: 0;
+		display: none;
+
+		&.current-fragment {
+			opacity: 1;
+			display: block;
+		}
+	}
+
+}

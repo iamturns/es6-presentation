@@ -1,0 +1,2630 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Javascript 2015</title>
+
+  <meta name="description" content="">
+  <meta name="author" content="Matthew Turnbull">
+
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/theme/turnbullm.css" id="theme">
+
+  <!-- Code syntax highlighting -->
+  <link rel="stylesheet" href="lib/css/zenburn.css">
+
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+
+  <!--[if lt IE 9]>
+  <script src="lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+<div class="reveal">
+<div class="slides">
+
+<section data-background="images/matrix.gif" id="intro">
+  <div class="has-dark-background">
+    <h1>Javascript 2015</h1>
+  </div>
+</section>
+
+<section data-transition="fade" data-background="#D4F1FF" id="spot-the-javascript-question">
+  <h1>Spot the Javascript</h1>
+  <div class="fragment">
+    <p>#1</p>
+    <pre class="highlight javascript" contenteditable>
+var title = ['Welcome', 'To', 'Javascript', '2015']
+  .join(' ')
+  .toLowerCase()</pre>
+  </div>
+  <div class="fragment">
+    <p>#2</p>
+    <pre class="highlight javascript" contenteditable>
+define "title" = create Array("Welcome", "To", "Javascript", "2015")
+  then, implode with ' '
+  then, stringToLower</pre>
+  </div>
+</section>
+
+<section data-transition="fade" data-background="#D4F1FF" id="spot-the-javascript-answer">
+  <pre class="highlight javascript" contenteditable>
+var title = ['Welcome', 'To', 'Javascript', '2015']
+  .join(' ')
+  .toLowerCase()</pre>
+  <div class="fragment">
+    <p>Who decided <em>this</em> is Javascript?</p>
+  </div>
+  <aside class="notes">
+    <ul>
+      <li>Variables created</li>
+      <li>Array created</li>
+      <li>Name of functions</li>
+    </ul>
+  </aside>
+</section>
+
+<section data-background="#AFDCFB" id="ecma-intro">
+  <img src="images/ecma-logo.png" />
+  <h2 class="fragment">???</h2>
+
+  <aside class="notes">
+    <ul>
+      <li>Some of you may be thinking</li>
+      <li>A skin disease?</li>
+    </ul>
+  </aside>
+</section>
+
+<section data-background="#AFDCFB" id="ecma-website">
+  <h2>Let's check their website...</h2>
+  <img src="images/ecma-website.png" class="fragment" />
+  <p class="fragment">Not much help...</p>
+</section>
+
+<section data-background="#93C0E7" id="ecma-answer">
+  <img src="images/ecma-logo.png" />
+  <ul>
+    <li class="fragment">Organisation</li>
+    <li class="fragment">
+      Not for profit <span style="font-size: 50%" class="fragment">(explains the website...)</span>
+    </li>
+    <li class="fragment">
+      Create standards
+      <ul>
+        <li class="fragment">CD-ROM file structure</li>
+        <li class="fragment">C#</li>
+        <li class="fragment">JSON</li>
+        <li class="fragment">And something they call...</li>
+      </ul>
+    </li>
+  </ul>
+  <aside class="notes">
+    <ul>
+      <li>MANY standards</li>
+      <li>Been around since Dad was born (1961)</li>
+    </ul>
+</section>
+
+<section data-background="#D4F1FF" data-transition="fade" id="ecma-answer-2">
+  <h3>ECMAScript</h3>
+  <ul>
+    <li class="fragment">Generic scripting language</li>
+    <li class="fragment"><em>Any</em> language can implement ECMAScript</li>
+    <li class="fragment">
+      Including;
+      <ul>
+        <li class="fragment">Actionscript</li>
+        <li class="fragment">And...<strong class="fragment">Javascript!</strong></li>
+      </ul>
+    </li>
+  </ul>
+</section>
+
+<section data-background="#AFDCFB" id="es5">
+  <h3>ECMAScript Version 5</h3>
+  <h4 class="fragment">aka ES5</h4>
+  <p class="fragment">Finalized in 2009</p>
+  <div class="fragment">
+    <pre class="highlight javascript" contenteditable>Object.keys()
+Date.toISOString()
+Date.now()
+JSON.parse()
+JSON.stringify()
+String.trim()
+Array.isArray()
+Array.indexOf()
+Array.forEach()
+Array.map()
+Array.filter()</pre>
+  </div>
+  <aside class="notes">
+    <ul>
+      <li>(last)</li>
+      <li>Notice how many of these features we use today</li>
+    </ul>
+  </aside>
+</section>
+
+<section data-background="#C7E3EF" id="fast-forward">
+  <h1>That was 2009</h1>
+  <p>Let's fast forward...</p>
+</section>
+
+<section data-background="#D4F1FF" id="fast-forward-frameworks">
+  <div style="width: 100%; height: 1000px; position: relative;"></div>
+  <img src="images/angular.png" class="fragment" style="border: 0; position: absolute; top: -50px; left: 80px; transform: scale(0.5)" />
+  <img src="images/node-js.png" class="fragment" style="border: 0; position: absolute; top: -30px; right: 0; transform: scale(0.6)" />
+  <img src="images/backbone.png" class="fragment" style="border: 0; position: absolute; top: 200px; left: 50px; transform: scale(0.6)" />
+  <img src="images/ember.png" class="fragment" style="border: 0; position: absolute; top: 300px; left: 0; transform: scale(0.5)" />
+  <img src="images/meteor.png" class="fragment" style="border: 0; position: absolute; top: 230px; left: 350px; transform: scale(0.4)" />
+  <img src="images/react.png" class="fragment" style="border: 0; position: absolute; top: 500px; left: 200px; transform: scale(0.6)" />
+</section>
+
+<section data-background="#D4F1FF" id="fast-forward-devices">
+  <div style="width: 100%; height: 1000px; position: relative;"></div>
+  <img src="images/smart-tv.jpg" class="fragment" style="border: 0; position: absolute; top: 50px; left: 0px; transform: scale(0.5)" />
+  <img src="images/devices.png" class="fragment" style="border: 0; position: absolute; top: 0; left: 0px; transform: scale(0.8)" />
+  <img src="images/phone-huge.jpg" class="fragment" style="border: 0; position: absolute; top: 50px; left: 500px; transform: scale(1)" />
+  <img src="images/watch.jpg" class="fragment" style="border: 0; position: absolute; top: 380px; left: -150px; transform: scale(0.6)" />
+  <img src="images/vr.gif" class="fragment" style="border: 0; position: absolute; top: 350px; left: 450px; transform: scale(0.6)" />
+  <img src="images/arduino.jpg" class="fragment" style="position: absolute; top: 200px; left: 70px" />
+</section>
+
+<section id="fast-forward-blown-up" data-background="images/blow-up.gif">
+  <div class="has-dark-background">
+    <h2>Javascript has exploded</h2>
+  </div>
+</section>
+
+<section data-background="#D4F1FF" id="es6">
+  <h2>In 2015</h2>
+  <h3 class="fragment">ECMAScript Version 6</h3>
+  <h4 class="fragment">aka ES6</h4>
+  <h4 class="fragment">aka ES2015</h4>
+  <p class="fragment"><img src="images/approved.jpg" style="width: 30%; border: 0;" /></p>
+</section>
+
+<section data-background="#C7E3EF" id="es6-whats-new">
+  <h2>What's new?</h2>
+  <div class="fragment">
+    <iframe src="html/es6-official-specs.html" style="width: 100%; height: 600px"></iframe>
+  </div>
+</section>
+
+<section data-background="images/huh.gif" id="es6-huh"></section>
+
+<section data-background="#93C0E7" id="preso-intro">
+  <h2>What you're about to learn</h2>
+  <ul>
+    <li class="fragment">
+        24 new features of ES6
+        <ul>
+          <li class="fragment">Code examples</li>
+          <li class="fragment">Best practises</li>
+        </ul>
+    </li>
+    <li class="fragment">
+      How do start coding ES6 today
+      <ul>
+        <li class="fragment">Using a transpiler</li>
+        <li class="fragment">Bundling modules</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+
+<section data-background="images/excited.gif" id="preso-yay"></section>
+
+<section data-background="images/unimpressed.gif" id="preso-why">
+  <div class="has-dark-background">
+    <ul style="font-size: 200%">
+      <li class="fragment">Why change Javascript?</li>
+      <li class="fragment">Why should I care?</li>
+      <li class="fragment">Too cutting edge</li>
+      <li class="fragment">Browser support</li>
+    </ul>
+  </div>
+</section>
+
+<section data-background="#93C0E7" id="why-intro">
+  <h1>7 reasons</h1>
+  <br />
+  <h3>To start using ES6</h3>
+  <h3>right now</h3>
+</section>
+
+<section data-background="#D4F1FF" id="why-standard">
+  <h2>1. It's a standard</h2>
+  <p><img src="images/approved.jpg" style="width: 30%; border: 0;" /></p>
+  <ul class="space-m">
+    <li class="fragment">It's <em>not</em> an experimental new framework</li>
+    <li class="fragment">It's <em>not</em> going to disappear</li>
+  </ul>
+  <ul class="space-m">
+    <li class="fragment">It's <strong>here to stay</strong></li>
+    <li class="fragment"><strong>This</strong> is how you write Javascript now, starting <strong>now</strong>!</li>
+  </ul>
+</section>
+
+<section data-background="#AFDCFB" id="why-amazing">
+  <h2>2. Amazing new stuff</h2>
+  <ul>
+    <li class="fragment">Classes</li>
+    <li class="fragment">Default parameters</li>
+    <li class="fragment">Constants</li>
+    <li class="fragment">Modules</li>
+    <li class="fragment">Promises</li>
+    <li class="fragment">Template literals</li>
+    <li class="fragment">Sets</li>
+    <li class="fragment">Maps</li>
+    <li class="fragment">...MORE!</li>
+  </ul>
+  <aside class="notes">
+    <ul>
+      <li>These features are amazing</li>
+      <li>As you will soon see</li>
+      <li>They have existed in some Javascript transpilers;</li>
+      <li>Coffeescript, Typescript</li>
+    </ul>
+  </aside>
+</section>
+
+<section data-background="#93C0E7" data-transition="fade" id="why-one-way">
+  <h2>3. One standard way</h2>
+  <br />
+  <div class="tiles">
+    <div class="tile">
+      <ul>
+        <li class="fragment">
+          Who's used a javascript library for <strong>promises</strong>?
+          <br /><br />
+          <ul>
+            <li class="fragment">Q</li>
+            <li class="fragment">Bluebird</li>
+            <li class="fragment">jQuery deferred</li>
+            <li style="visibility: hidden">ES6 Promises</li>
+            <li style="visibility: hidden"><strong>One standard way</strong>!</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="tile" style="visibility: hidden">
+      <ul>
+        <li>Less to memorise & learn</li>
+        <li>Easier to jump between projects</li>
+        <li>
+          Implemented in browsers
+          <ul>
+            <li>Optimized</li>
+            <li>Less bloated 3rd party libraries</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section data-background="#93C0E7" data-transition="fade" id="why-one-way-2">
+  <h2>3. One standard way</h2>
+  <br />
+  <div class="tiles">
+    <div class="tile">
+      <ul>
+        <li>
+          Who's used a javascript library for <strong>promises</strong>?
+          <br /><br />
+          <ul>
+            <li class="strike">Q</li>
+            <li class="strike">Bluebird</li>
+            <li class="strike">jQuery deferred</li>
+            <li class="fragment">ES6 Promises</li>
+            <li class="fragment"><strong>One standard way</strong>!</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="tile">
+      <ul>
+        <li class="fragment">Less to memorise & learn</li>
+        <li class="fragment">Easier to jump between projects</li>
+        <li class="fragment">
+          Implemented in browsers
+          <ul>
+            <li class="fragment">Optimized</li>
+            <li class="fragment">Less bloated 3rd party libraries</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <aside class="notes">
+    <ul>
+      <li>Talk about Coffeescript</li>
+    </ul>
+  </aside>
+</section>
+
+<section data-background="#D4F1FF" id="why-left-behind">
+  <h2>4. Don't get left behind</h2>
+  <ul class="space-m">
+    <li class="fragment">ES7 / ES2016 will be released <strong>next year!</strong></li>
+    <li class="fragment">Javascript is <strong>evolving quickly</strong></li>
+  </ul>
+  <div class="tiles">
+    <div class="fragment tile" style="padding: 25px">
+      <h4>Today</h4>
+      <ul>
+        <li class="fragment space-m">We use <em>ES5</em> features without thinking</li>
+        <li class="fragment space-m">We start to use new <em>ES6</em> features</li>
+      </ul>
+    </div>
+    <div class="fragment tile" style="padding: 25px;">
+      <h4>Soon</h4>
+      <ul>
+        <li class="fragment space-m">We use <em>ES6</em> features without thinking</li>
+        <li class="fragment space-m">We start to use new <em>ES7</em> features</li>
+      </ul>
+    </div>
+  </div>
+  <p class="fragment space-m">Start using it <strong>now</strong>, or be <strong>left behind</strong>!</p>
+</section>
+
+<section data-background="#AFDCFB" id="why-frameworks">
+  <h2>5. Frameworks</h2>
+  <ul>
+    <li class="fragment">Angular 2.0</li>
+    <li class="fragment">React Native</li>
+    <li class="fragment">Ember.js</li>
+  </ul>
+  <p class="fragment">These are all <strong>popular</strong> and <strong>influential</strong> frameworks</p>
+  <p class="fragment">They are all using ES6 <strong>now</strong>!</p>
+  <aside class="notes">
+    <ul>
+      <li>These frameworks are leveraging the power of ES6</li>
+      <li>Ember.js - right now has implemented ES6 modules and promises</li>
+      <li>
+        You can write ES5 with these frameworks.
+        <ul>
+          <li>It will be clunky in comparison</li>
+          <li>Documentation and online code will use ES6</li>
+        </ul>
+      </li>
+    </ul>
+  </aside>
+</section>
+
+<section data-background="#93C0E7" id="why-clean">
+  <h2>6. Cleaner code</h2>
+  <ul>
+    <li class="fragment">Easier to read</li>
+    <li class="fragment">Easier to use</li>
+    <li class="fragment">Easier to maintain</li>
+    <li class="fragment">You'll see soon <span class="fragment">:)</span></li>
+  </ul>
+</section>
+
+<section data-background="#D4F1FF" id="why-awesome">
+  <h2>7. It's AWESOME!</h2>
+  <ul>
+    <li class="fragment">Javascript is <strong>maturing</strong></li>
+    <li class="fragment">Javascript is becoming <strong>more powerful</strong></li>
+    <li class="fragment">Javascript is <strong>catching up</strong> to other languages</li>
+    <li class="fragment">These are <strong>exciting times</strong>!</li>
+  </ul>
+</section>
+
+<section data-background="images/approval.gif" id="yay"></section>
+
+<section data-background="images/smug.gif" id="browser-support-intro">
+  <div class="has-dark-background">
+    <h1>WAIT</h1>
+    <p class="fragment">What about browser support?</p>
+  </div>
+</section>
+
+<section data-background="#D4F1FF" id="browser-support">
+  <h2>ES6 Browser Support</h2>
+  <p>November 2015</p>
+  <table>
+    <tr>
+      <th>IE10</th>
+      <td>7%</td>
+    </tr>
+    <tr>
+      <th>Safari 6</th>
+      <td>12%</td>
+    </tr>
+    <tr>
+      <th>IE11</th>
+      <td>16%</td>
+    </tr>
+    <tr>
+      <th>Safari 7 & 8</th>
+      <td>21%</td>
+    </tr>
+    <tr>
+      <th>Safari 9</th>
+      <td>54%</td>
+    </tr>
+    <tr>
+      <th>Chrome</th>
+      <td>65%</td>
+    </tr>
+    <tr>
+      <th>Firefox</th>
+      <td>74%</td>
+    </tr>
+    <tr>
+      <th>IE Edge</th>
+      <td>84%</td>
+    </tr>
+  </table>
+</section>
+
+<section data-background="#D4F1FF" data-transition="fade" id="browser-support-improve">
+  <p>Support will improve over time</p>
+</section>
+
+<section data-background="images/angry.gif" data-transition="fade" id="browser-support-gif">
+  <div class="has-dark-background">
+    <p>Support will improve over time</p>
+  </div>
+</section>
+
+<section data-background="#D4F1FF" data-transition="fade" id="browser-support-never-mind">
+  <h2>It doesn't matter</h2>
+</section>
+
+<section data-background="images/surprised.gif" data-transition="fade" id="browser-support-never-mind-gif">
+  <div class="has-dark-background">
+    <h2>It doesn't matter</h2>
+  </div>
+</section>
+
+<section data-background="#93C0E7" id="babel">
+  <img src="images/babel.png" />
+  <ul>
+    <li class="fragment">Transpiler</li>
+    <li class="fragment">Converts ES6 to ES5</li>
+  </ul>
+</section>
+
+<section data-background="#D4F1FF" id="babel-demo">
+  <div style="display: flex; flex-direction: column; height: 100px; position: absolute; top: -250px;">
+    <div class="fragment">
+      <pre class="highlight javascript full" contenteditable style="width: 25%; margin: 0 auto">
+fancyES6Code();</pre>
+    </div>
+    <div class="fragment">
+      <img src="images/arrow-down.png" style="border: 0; width: 10%; box-shadow: none" />
+    </div>
+    <div class="fragment">
+      <img src="images/babel.png" style="width: 20%" />
+    </div>
+    <div class="fragment">
+      <img src="images/arrow-down.png" style="border: 0; width: 10%; box-shadow: none" />
+    </div>
+    <div class="fragment">
+      <pre class="highlight javascript full" contenteditable style="width: 25%; margin: 0 auto">
+regularES5Code();</pre>
+    </div>
+  </div>
+</section>
+
+<section data-background="#D4F1FF" id="babel-demo-sass">
+  <h2>&nbsp;</h2>
+  <div style="display: flex; flex-direction: column; height: 120px; position: absolute; top: -250px; width: 100%">
+    <div class="fragment">
+      <pre class="highlight javascript full" contenteditable style="width: 25%; margin: 0 auto">
+fancySassCode</pre>
+    </div>
+    <div class="fragment">
+      <img src="images/arrow-down.png" style="border: 0; width: 10%; box-shadow: none" />
+    </div>
+    <div class="fragment">
+      <img src="images/sass.png" style="width: 20%; border: 0; box-shadow: none" />
+    </div>
+    <div class="fragment">
+      <img src="images/arrow-down.png" style="border: 0; width: 10%; box-shadow: none" />
+    </div>
+    <div class="fragment">
+      <pre class="highlight javascript full" contenteditable style="width: 25%; margin: 0 auto">
+regularCssCode</pre>
+    </div>
+  </div>
+</section>
+
+<section data-background="#AFDCFB" data-transition="fade" id="babel-usage">
+  <h2>Usage</h2>
+  <ul style="width: 100%">
+    <li class="fragment">
+      Command line
+      <pre class="highlight cli">> babel main.js</pre>
+    </li>
+    <li class="fragment">
+      NPM package
+      <pre class="highlight javascript">// main.js
+
+require("babel-core/register");
+
+// ES6 here</pre>
+    </li>
+    <li class="fragment">
+      Browser
+      <pre class="highlight html">&lt;script src="babel-core/browser.js"&gt;&lt;&sol;script&gt;
+
+&lt;script src="main.es6.js"&gt;&lt;&sol;script&gt;
+</pre>
+    </li>
+  </ul>
+</section>
+
+<section data-background="#AFDCFB" data-transition="fade" id="babel-usage-2">
+  <ul style="width: 100%">
+    <li>
+      Gulp
+      <pre class="highlight javascript">.pipe(babel())</pre>
+    </li>
+    <li class="fragment">
+      Grunt
+      <pre class="highlight javascript">grunt.initConfig({
+  "babel": {}
+})</pre>
+    </li>
+  </ul>
+  </section>
+
+<section data-background="#93C0E7" id="babel-used-by">
+  <h2>Used by</h2>
+  <br />
+  <div class="tiles" style="width: 60%; margin: 0 auto;">
+    <div class="tile">
+      <ul>
+        <li>Facebook</li>
+        <li>Netflix</li>
+        <li>Mozilla</li>
+        <li>Yahoo</li>
+        <li>Paypal</li>
+        <li>Airbnb</li>
+        <li>Reddit</li>
+      </ul>
+    </div>
+    <div class="tile">
+      <ul>
+        <li>Spotify</li>
+        <li>Atlassian</li>
+        <li>Soundcloud</li>
+        <li>Vimeo</li>
+        <li>Slack</li>
+        <li>Evernote</li>
+        <li>LinkedIn</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section data-background="images/clap.gif" id="babel-amazing">
+  <div class="has-dark-background">
+    <h2>Babel is amazing</h2>
+  </div>
+</section>
+
+<section data-background="#D4F1FF" id="es6-intro">
+  <h2>Let's learn ES6</h2>
+  <p class="fragment">24 new features</p>
+  <div class="fragment">
+    <strong>Barry&nbsp;&nbsp;&nbsp;</strong>
+    <img src="images/best-practise-bear.png" class="inline" width="100" style="position: relative; top: 45px; left: -10px" />
+    <span class="fragment">I love you</span>
+  </div>
+  <div class="fragment">
+    <strong>Anthony&nbsp;&nbsp;&nbsp;</strong>
+    <img src="images/anteater.png" class="inline" width="100" style="position: relative; top: 45px; left: -10px" />
+    <span class="fragment">&nbsp;Stop staring at me</span>
+  </div>
+</section>
+
+<section data-background="images/ready.gif" id="begin">
+  <div class="has-dark-background">
+    <h2>Ready?</h2>
+  </div>
+</section>
+
+<section data-background="#D4F1FF" data-transition="fade" id="let-intro">
+  <pre class="fragment highlight javascript" contenteditable>
+var myBestFriend = 'Barry';
+
+<span class="fragment">if (true) {
+  var myBestFriend = 'Anthony';
+}</span>
+
+<span class="fragment">console.log( myBestFriend ); // ???</span></pre>
+  <div>
+    <img src="images/anteater.png" class="inline" width="100" style="position: relative; top: 45px; left: -10px" />
+    <span class="fragment">What is logged to the console?</span>
+  </div>
+</section>
+
+<section data-background="#D4F1FF" data-transition="fade" id="let-intro-answer">
+  <pre class="highlight javascript" contenteditable>
+var myBestFriend = 'Barry';
+
+if (true) {
+  var myBestFriend = 'Anthony';
+}
+
+console.log( myBestFriend ); // Anthony</pre>
+  <div style="visibility: hidden">
+    <img src="images/anteater.png" class="inline" width="100" style="position: relative; top: 45px; left: -10px" />
+    What is logged to the console?
+  </div>
+</section>
+
+<section data-background="#D4F1FF" id="let-intro-2">
+  <pre class="highlight javascript" contenteditable>
+var numbers = [1, 5, 10];
+
+// Add numbers together
+
+<span class="fragment">var result = 0;</span>
+
+<span class="fragment">for (var i = 0; i < numbers.length; i++) {
+  <span class="fragment">var number = numbers[i];</span>
+  <span class="fragment">result += number;</span>
+}</span>
+
+<span class="fragment">console.log( result );</span><span class="fragment"> // 16</span>
+<span class="fragment">console.log( i );</span><span class="fragment"> // 3</span>
+<span class="fragment">console.log( number );</span><span class="fragment"> // 10</span></pre>
+  <ul>
+    <li class="fragment">Var has a large scope</li>
+    <li class="fragment">Often an unintended side-effect</li>
+    <li class="fragment">Can produce strange bugs</li>
+  </ul>
+</section>
+
+<section data-background="#AFDCFB" id="let">
+  <h2><em>#1.</em> Let keyword</h2>
+  <p class="fragment">Limits variable to block scope</p>
+
+  <pre class="fragment highlight javascript" contenteditable>
+let numbers = [1, 5, 10];
+<span class="fragment">let result = 0;</span>
+<span class="fragment">for (let i = 0; i < numbers.length; i++) {
+  <span class="fragment">let number = number[i];</span>
+  <span class="fragment">result += number;</span>
+}</span>
+<span class="fragment">console.log( result );</span><span class="fragment"> // 16</span>
+<span class="fragment">console.log( i );</span><span class="fragment"> // undefined</span>
+<span class="fragment">console.log( number );</span><span class="fragment"> // undefined</span></pre>
+  <p class="fragment">This is how most would expect <strong>var</strong> to behave</p>
+  <img src="images/best-practise-bear.png" class="fragment inline" style="position: absolute; left: 22px;" />
+  <p class="fragment" style="text-align: left; margin-left: 150px; margin-top: 35px">Use <strong>let</strong> instead of <strong>var</strong></p>
+  <p class="fragment" style="text-align: left; margin-left: 250px; margin-top: -20px; font-size: 80%">(unless you <em>really</em> need <strong>var</strong> scoping)</p>
+</section>
+
+<section data-background="#AFDCFB" id="constants">
+  <h2><em>#2.</em> Constant</h2>
+  <p class="fragment">Value that cannot be altered</p>
+  <pre class="highlight javascript fragment" contenteditable>
+const myConstant = 'never changes';
+
+<span class="fragment">myConstant = 'can I change it?';</span><span class="fragment"> // NO!</span></pre>
+  <img src="images/best-practise-bear.png" class="fragment inline" style="position: absolute; left: 22px;" />
+  <p class="fragment" style="text-align: left; margin-left: 150px; margin-top: 35px">Use <strong>const</strong> instead of <strong>let</strong></p>
+  <p class="fragment" style="text-align: left; margin-left: 150px; margin-top: -20px;">Guarantees references won't be overridden</p>
+  <p class="fragment" style="text-align: left; margin-left: 200px; margin-top: -10px; font-size: 80%">(if you need references overriden, then use <strong>let</strong>)</p>
+</section>
+
+<section data-background="#93C0E7" id="string-features">
+  <h2>New string functions</h2>
+  <ul>
+    <li class="fragment"><em>#3.</em> string.startsWith()</li>
+    <li class="fragment"><em>#4.</em> string.endsWith()</li>
+    <li class="fragment"><em>#5.</em> string.includes()</li>
+  </ul>
+  <pre class="fragment highlight javascript" contenteditable>
+const testString = 'testing';
+
+<span class="fragment">testString.startsWith('t'); // true</span>
+<span class="fragment">testString.startsWith('test'); // true</span>
+<span class="fragment">testString.startsWith('e', 1); // true</span>
+<span class="fragment">testString.startsWith('est', 1); // true</span>
+
+<span class="fragment">testString.endsWith('ing'); // true</span>
+<span class="fragment">testString.endsWith('tin', 1); // true</span>
+
+<span class="fragment">testString.includes('sti'); // true</span></pre>
+</section>
+
+<section data-background="#D4F1FF" id="array-from">
+  <h2><em>#6.</em> Array.from()</h2>
+  <p class="fragment">Converts objects to an array</p>
+  <pre class="fragment highlight javascript" contenteditable>
+const myArray = Array.from(notAnArray);</pre>
+  <p class="fragment" style="text-align: left">
+    Works with either;
+    <ul style="width: 100%">
+      <li class="fragment" style="font-size: 90%">Objects that are <strong>iterable</strong><span style="font-size: 70%"> (can be looped)</span></li></li>
+      <li class="fragment" style="font-size: 90%">Objects with a <strong>length</strong> property, and <strong>indexed elements</strong></li>
+    </ul>
+  </p>
+  <pre class="fragment highlight javascript" contenteditable>
+Array.from(document.querySelectorAll('img'));
+<span class="fragment">Array.from(jQuery('img'));</span>
+<span class="fragment">Array.from("test"); // ["t", "e", "s", "t"]</span></pre>
+</section>
+
+<section data-background="#AFDCFB" id="array-find">
+  <h2>New array functions</h2>
+  <ul>
+    <li class="fragment"><em>#7.</em> array.find()</li>
+    <li class="fragment"><em>#8.</em> array.findIndex()</li>
+  </ul>
+  <pre class="fragment highlight javascript" contenteditable style="font-size: 50%">
+const friends = [
+  <span class="fragment">{
+    name: 'Barry',
+    species: 'Bear'
+  },</span>
+  <span class="fragment">{
+    name: 'Anthony',
+    species: 'Anteater'
+  }</span>
+];
+
+<span class="fragment">const myBestFriend = </span><span class="fragment">friends.find(</span><span class="fragment">function(friend) {
+  <span class="fragment">return friend.name === 'Barry';</span>
+});</span>
+<span class="fragment">console.log( myBestFriend );</span><span class="fragment"> // { name: 'Barry', species: 'Bear' }</span>
+
+<span class="fragment">const myBestFriendIndex = friends.findIndex(function(friend) {
+  return friend.name === 'Barry';
+});</span>
+<span class="fragment">console.log( myBestFriendIndex );</span><span class="fragment"> // 0</span></pre>
+</section>
+
+<section data-background="#93C0E7" id="array-spread-es5">
+  <pre class="fragment highlight javascript" contenteditable>
+const sentence = joinWords('I', 'love', 'Barry');</pre>
+  <div style="position: relative; top: -35px;">
+    <img src="images/anteater.png" class="inline" width="100" style="position: relative; top: 45px; left: -10px" />
+    <span class="fragment">Create the <strong>joinWords</strong> function</span>
+  </div>
+  <pre class="fragment highlight javascript" contenteditable>
+function joinWords(word1, word2, word3) {
+  // Join the words and return them
+}</pre>
+  <pre class="fragment highlight javascript" contenteditable>
+function joinWords() {
+  const words = Array.prototype.slice.call(arguments);
+  // Join the words and return them
+}</pre>
+  <div class="fragment" style="position: relative; top: -50px;">
+    <img src="images/best-practise-bear.png" class="inline" width="100" style="position: relative; top: 45px; left: -10px" />
+    There must be a better way...
+  </div>
+</section>
+
+<section data-background="#93C0E7" id="array-spread-es5-2">
+  <pre class="fragment highlight javascript" contenteditable>
+const words = ['I', 'love', 'Barry'];</pre>
+  <div style="position: relative; top: -35px;">
+    <img src="images/anteater.png" class="inline" width="100" style="position: relative; top: 45px; left: -10px" />
+    <span class="fragment">Call <strong>joinWords</strong> with an array</span>
+  </div>
+  <pre class="fragment highlight javascript" contenteditable>
+// Could try alter joinWords function to accept an array?
+<span class="fragment">const sentence = joinWords(words);</span></pre>
+  <pre class="fragment highlight javascript" contenteditable>
+const sentence = joinWords.apply(null, words);</pre>
+  <div class="fragment" style="position: relative; top: -50px;">
+    <img src="images/best-practise-bear.png" class="inline" width="100" style="position: relative; top: 45px; left: -10px" />
+    Use spread!
+  </div>
+</section>
+
+<section data-background="#D4F1FF" id="array-spread">
+  <h2><em>#9.</em> Spread operator</h2>
+  <p>Allows expressions to be <strong>expanded</strong> into <strong>arguments</strong></p>
+  <p class="fragment">Represented by <strong>3 dots</strong></p>
+  <pre class="fragment highlight javascript" contenteditable>
+const words = ['I', 'love', 'Barry'];
+<span class="fragment">const sentence = joinWords(...words);</span>
+<span class="fragment">const sentence = joinWords('I', 'love', 'Barry'); // Same thing!</span></pre>
+  <pre class="fragment highlight javascript" contenteditable>
+function joinWords(...words) {
+  // 'words' is an array!
+}</pre>
+</section>
+
+<section data-background="#D4F1FF" id="array-spread-2">
+  <pre class="highlight javascript" contenteditable>
+const sentence = joinWords(...['I', 'love', 'Barry']);
+</pre>
+  <pre class="fragment highlight javascript" contenteditable>
+const words = ['I', 'love'];
+const sentence = joinWords(...words, 'my', ...['friend', 'Barry']);</pre>
+  <pre class="fragment highlight javascript" contenteditable>
+const words = ['I', 'love', 'Barry'];
+const wordsCopy = [...words];</pre>
+</section>
+
+<section data-background="#AFDCFB" id="destructuring">
+  <pre class="fragment highlight javascript" contenteditable>
+const position = [50, 200];</pre>
+  <div style="position: relative; top: -35px;">
+    <img src="images/anteater.png" class="inline" width="100" style="position: relative; top: 45px; left: -10px" />
+    <span class="fragment">I want 'x' and 'y' constants</span>
+  </div>
+  <pre class="fragment highlight javascript" contenteditable>
+const x = position[0];
+const y = position[1];</pre>
+  <div class="fragment" style="position: relative; top: -50px;">
+    <img src="images/best-practise-bear.png" class="inline" width="100" style="position: relative; top: 45px; left: -10px" />
+    Use destructuring!
+  </div>
+  <pre class="fragment highlight javascript" contenteditable>
+const [x, y] = position;</pre>
+</section>
+
+<section data-background="#AFDCFB" id="destructuring-2">
+  <h2><em>#10.</em> Destructuring</h2>
+  <p class="fragment">Works with spreads</p>
+  <pre class="fragment highlight javascript" contenteditable>
+const [a, b, ...rest] = [1, 2, 3, 4, 5];
+console.log( rest ); // [3, 4, 5]</pre>
+  <p class="fragment">Works even better with objects</p>
+<pre class="fragment highlight javascript" contenteditable>
+function getPosition() {
+  return { x: 50, y: 200, z: 13 };
+}</pre>
+  <pre class="fragment highlight javascript" contenteditable>
+const { x, y } = getPosition();</pre>
+  <pre class="fragment highlight javascript" contenteditable>
+const { z : zIndex } = getPosition();
+<span class="fragment">console.log( zIndex ); // 13</span></pre>
+</section>
+
+<section data-background="#93C0E7" id="object-shorthand">
+  <h2><em>#11.</em> Object shorthand</h2>
+  <pre class="fragment highlight javascript" contenteditable>
+function getPosition(something) {
+  <span class="fragment">const x, y, z;</span>
+
+  <span class="fragment">// Do some calculation magic</span>
+  <span class="fragment">// Populate x, y, z constants</span>
+
+  <span class="fragment">// ES5
+  return {
+    x: x,
+    y: y,
+    z: z
+  };</span>
+
+  <span class="fragment">// ES6
+  return {
+    x,
+    y,
+    z
+  };</span>
+}</pre>
+</section>
+
+<section data-background="#D4F1FF" id="template-literals">
+  <h2><em>#12.</em> Template literals</h2>
+  <pre class="highlight javascript" contenteditable>
+const name = 'Bob';
+const activity = 'running';
+const place = 'library';</pre>
+
+  <pre class="fragment highlight javascript" contenteditable>
+// ES5
+const sentence = name + ' is ' + activity + ' to the ' + place;</pre>
+  <pre class="fragment highlight javascript" contenteditable>
+// ES6
+const sentence = `${name} is ${activity} to the ${place}`;</pre>
+</section>
+
+<section data-background="#D4F1FF" id="template-literals-long">
+  <pre class="highlight javascript" contenteditable>
+// ES5
+
+const story = '"My name is ' + name + '" said ' + name + '.\n'
+  + '"I\'m ' + activity + ' to the ' + place + '", he continued.\n'
+  + 'Then ' + name + ' went ' + activity + ' to the ' + place + '.';</pre>
+  <pre class="fragment highlight javascript" contenteditable>
+// ES6
+
+const story = `"My name is ${name}" said ${name}.
+"I'm ${activity} to the ${place}", he continued.
+Then, ${name} went ${activity} to the ${place}.`;</pre>
+  <aside class="notes">
+    <ul>
+      <li>Backticks</li>
+      <li>New lines</li>
+      <li>Quotes and double quotes</li>
+      <li>Escape character in I\'m</li>
+    </ul>
+  </aside>
+</section>
+
+<section data-background="#AFDCFB" id="sets-challenge">
+  <pre class="fragment highlight javascript" contenteditable>
+function displayMessage(message) {
+  <span class="fragment">// Some magic here to display the message</span>
+}
+
+<span class="fragment">function removeMessage(message) {
+  <span class="fragment">// Some magic here to remove the message</span>
+}</span></pre>
+  <p>
+    <img src="images/anteater.png" class="inline" width="100" style="position: relative; top: 45px; left: -10px" />
+    <span class="fragment">Stop duplicate messages from displaying</span>
+  </p>
+</section>
+
+<section data-background="#AFDCFB" data-transition="fade" id="sets-es5">
+  <p>
+    <img src="images/anteater.png" class="inline" width="60" style="position: relative; top: 30px; left: -10px" />
+    Stop duplicate messages from displaying
+  </p>
+  <pre class="highlight javascript" contenteditable>
+function displayMessage(message) {
+  // Some magic here to display the message
+}
+
+function removeMessage(message) {
+  // Some magic here to remove the message
+}</pre>
+</section>
+
+<section data-background="#AFDCFB" data-transition="fade" id="sets-es5-2">
+  <p>
+    <img src="images/anteater.png" class="inline" width="60" style="position: relative; top: 30px; left: -10px" />
+    Stop duplicate messages from displaying
+  </p>
+  <pre class="highlight javascript" contenteditable>
+<span class="emphasis">const messagesDisplayed = [];</span>
+
+function displayMessage(message) {
+  // Some magic here to display the message
+}
+
+function removeMessage(message) {
+  // Some magic here to remove the message
+}</pre>
+</section>
+
+<section data-background="#AFDCFB" data-transition="fade" id="sets-es5-3">
+  <p>
+    <img src="images/anteater.png" class="inline" width="60" style="position: relative; top: 30px; left: -10px" />
+    Stop duplicate messages from displaying
+  </p>
+  <pre class="highlight javascript" contenteditable>
+const messagesDisplayed = [];
+
+function displayMessage(message) {
+
+  <span class="emphasis">messagesDisplayed.push(message);</span>
+
+  // Some magic here to display the message
+}
+
+function removeMessage(message) {
+
+  // Some magic here to remove the message
+}</pre>
+</section>
+
+<section data-background="#AFDCFB" data-transition="fade" id="sets-es5-4">
+  <p>
+    <img src="images/anteater.png" class="inline" width="60" style="position: relative; top: 30px; left: -10px" />
+    Stop duplicate messages from displaying
+  </p>
+  <pre class="highlight javascript" contenteditable>
+const messagesDisplayed = [];
+
+function displayMessage(message) {
+
+  messagesDisplayed.push(message);
+
+  // Some magic here to display the message
+}
+
+function removeMessage(message) {
+
+  <span class="emphasis">messagesDisplayed.splice(messagesDisplayed.indexOf(message), 1);</span>
+
+  // Some magic here to remove the message
+}</pre>
+</section>
+
+<section data-background="#D4F1FF" data-transition="fade" id="sets-es5-5">
+  <p>
+    <img src="images/anteater.png" class="inline" width="60" style="position: relative; top: 30px; left: -10px" />
+    Stop duplicate messages from displaying
+  </p>
+  <pre class="highlight javascript" contenteditable>
+const messagesDisplayed = [];
+
+function displayMessage(message) {
+
+  <span class="emphasis">if (messagesDisplayed.indexOf(message) > -1) {</span>
+    <span class="emphasis">return false;</span>
+  <span class="emphasis">}</span>
+
+  messagesDisplayed.push(message);
+
+  // Some magic here to display the message
+}
+
+function removeMessage(message) {
+
+  messagesDisplayed.splice(messagesDisplayed.indexOf(message), 1);
+
+  // Some magic here to remove the message
+}</pre>
+</section>
+
+<section data-background="#D4F1FF" data-transition="fade" id="sets-es5-6">
+  <p>
+    <img src="images/anteater.png" class="inline" width="60" style="position: relative; top: 30px; left: -10px" />
+    Stop duplicate messages from displaying
+  </p>
+  <pre class="highlight javascript" contenteditable>
+const messagesDisplayed = [];
+
+function displayMessage(message) {
+
+  if (messagesDisplayed.indexOf(message) > -1) {
+    return false;
+  }
+
+  messagesDisplayed.push(message);
+
+  // Some magic here to display the message
+}
+
+function removeMessage(message) {
+
+  messagesDisplayed.splice(messagesDisplayed.indexOf(message), 1);
+
+  // Some magic here to remove the message
+}</pre>
+</section>
+
+<section data-background="#D4F1FF" data-transition="fade" id="sets-es5-7">
+  <p>
+    <img src="images/anteater.png" class="inline" width="60" style="position: relative; top: 30px; left: -10px" />
+    Stop duplicate messages from displaying
+  </p>
+  <pre class="highlight javascript" contenteditable>
+const messagesDisplayed = [];
+
+function displayMessage(message) {
+
+  // Check if message has already been displayed
+  if (messagesDisplayed.indexOf(message) > -1) {
+    return false;
+  }
+
+  messagesDisplayed.push(message);
+
+  // Some magic here to display the message
+}
+
+function removeMessage(message) {
+
+  // Remove message as displayed
+  messagesDisplayed.splice(messagesDisplayed.indexOf(message), 1);
+
+  // Some magic here to remove the message
+}</pre>
+</section>
+
+<section data-background="#AFDCFB" id="sets">
+  <h2><em>#13.</em> Sets</h2>
+  <div class="fragment">
+    <p>A new type of object</p>
+    <pre class="highlight javascript" contenteditable>
+const mySet = new Set();</pre>
+  </div>
+  <p class="fragment">Store unique values of any type</p>
+  <pre class="fragment highlight javascript" contenteditable>
+mySet.add('test');
+<span class="fragment">mySet.add({ testObject: true });</span>
+</pre>
+  <p class="fragment">Similar to an array, but easier to use:</p>
+  <pre class="fragment highlight javascript" contenteditable style="font-size: 48%">
+mySet.has('test'); // true
+<span class="fragment">mySet.delete('test');</span>
+<span class="fragment">mySet.clear();</span>
+<span class="fragment">mySet.size;</span>
+<span class="fragment">mySet.keys();</span>
+<span class="fragment">mySet.values();</span>
+<span class="fragment">mySet.entries();</span>
+<span class="fragment">mySet.forEach();</span></pre>
+</section>
+
+<section data-background="#D4F1FF" data-transition="fade" id="sets-es6-1">
+  <p>
+    <img src="images/anteater.png" class="inline" width="60" style="position: relative; top: 30px; left: -10px" />
+    Stop duplicate messages from displaying
+  </p>
+  <pre class="highlight javascript" contenteditable>
+function displayMessage(message) {
+  // Some magic here to display the message
+}
+
+function removeMessage(message) {
+  // Some magic here to remove the message
+}</pre>
+</section>
+
+<section data-background="#D4F1FF" data-transition="fade" id="sets-es6-2">
+  <p>
+    <img src="images/anteater.png" class="inline" width="60" style="position: relative; top: 30px; left: -10px" />
+    Stop duplicate messages from displaying
+  </p>
+  <pre class="highlight javascript" contenteditable>
+<span class="emphasis">const messagesDisplayed = new Set();</span>
+
+function displayMessage(message) {
+  // Some magic here to display the message
+}
+
+function removeMessage(message) {
+  // Some magic here to remove the message
+}</pre>
+</section>
+
+<section data-background="#D4F1FF" data-transition="fade" id="sets-es6-3">
+  <p>
+    <img src="images/anteater.png" class="inline" width="60" style="position: relative; top: 30px; left: -10px" />
+    Stop duplicate messages from displaying
+  </p>
+  <pre class="highlight javascript" contenteditable>
+const messagesDisplayed = new Set();
+
+function displayMessage(message) {
+
+  <span class="emphasis">messagesDisplayed.add(message);</span>
+
+  // Some magic here to display the message
+}
+
+function removeMessage(message) {
+  // Some magic here to remove the message
+}</pre>
+</section>
+
+<section data-background="#D4F1FF" data-transition="fade" id="sets-es6-4">
+  <p>
+    <img src="images/anteater.png" class="inline" width="60" style="position: relative; top: 30px; left: -10px" />
+    Stop duplicate messages from displaying
+  </p>
+  <pre class="highlight javascript" contenteditable>
+const messagesDisplayed = new Set();
+
+function displayMessage(message) {
+
+  messagesDisplayed.add(message);
+
+  // Some magic here to display the message
+}
+
+function removeMessage(message) {
+
+  <span class="emphasis">messagesDisplayed.delete(message);</span>
+
+  // Some magic here to remove the message
+}</pre>
+</section>
+
+<section data-background="#D4F1FF" data-transition="fade" id="sets-es6-5">
+  <p>
+    <img src="images/anteater.png" class="inline" width="60" style="position: relative; top: 30px; left: -10px" />
+    Stop duplicate messages from displaying
+  </p>
+  <pre class="highlight javascript" contenteditable>
+const messagesDisplayed = new Set();
+
+function displayMessage(message) {
+
+  <span class="emphasis">if (messagesDisplayed.has(message)) {</span>
+    <span class="emphasis">return false;</span>
+  <span class="emphasis">}</span>
+
+  messagesDisplayed.add(message);
+
+  // Some magic here to display the message
+}
+
+function removeMessage(message) {
+
+  messagesDisplayed.delete(message)
+
+  // Some magic here to remove the message
+}</pre>
+</section>
+
+<section data-background="#D4F1FF" data-transition="fade" id="sets-es6-6">
+  <pre class="highlight javascript" contenteditable>
+const messagesDisplayed = new Set();
+
+function displayMessage(message) {
+
+  if (messagesDisplayed.has(message)) {
+    return false;
+  }
+
+  messagesDisplayed.add(message);
+
+  // Some magic here to display the message
+}
+
+function removeMessage(message) {
+
+  messagesDisplayed.delete(message)
+
+  // Some magic here to remove the message
+}</pre>
+  <div class="fragment">
+    <img src="images/best-practise-bear.png" class="inline" width="80" style="position: relative; top: 30px; left: -10px" />
+    Pow!
+  </div>
+</section>
+
+<section data-background="#AFDCFB" id="weak-sets-challenge">
+  <p>
+    <img src="images/anteater.png" class="inline" width="60" style="position: relative; top: 30px; left: -10px" />
+    <span class="fragment">What if hundreds of messages are displayed?</span>
+  </p>
+  <pre class="fragment highlight javascript" contenteditable>
+const testMessage = {
+  contents: 'Barry is such a handsome bear'
+};
+
+<span class="fragment">displayMessage(testMessage);</span>
+
+<span class="fragment">const importantMessage = {
+  contents: 'Anteaters suck',
+  important: true
+};</span>
+
+<span class="fragment">displayMessage(importantMessage);</span>
+
+<span class="fragment">// etc... (hundreds of these)</span></pre>
+</section>
+
+<section data-background="#AFDCFB" id="weak-sets-challenge-2">
+  <p>
+    <img src="images/anteater.png" class="inline" width="60" style="position: relative; top: 30px; left: -10px" />
+    What if hundreds of messages are displayed?
+  </p>
+  <pre class="highlight javascript" contenteditable>
+const messagesDisplayed = new Set();
+
+function displayMessage(message) {
+
+  if (messagesDisplayed.has(message)) {
+    return false;
+  }
+
+  messagesDisplayed.add(message);
+
+  // Some magic here to display the message
+}</pre>
+  <ul style="width: 100%">
+    <li class="fragment">The Set will become <strong>full</strong> of message objects</li>
+    <li class="fragment">The message objects can never be <strong>garbage collected</strong></li>
+    <li class="fragment">Which means... <span class="fragment"><strong>memory leak!</strong></span></li>
+  </ul>
+</section>
+
+<section data-background="#93C0E7" id="weak-sets">
+  <h2><em>#14.</em> Weak Sets</h2>
+  <p class="fragment">Similar to the <strong>Set</strong> object</p>
+  <p class="fragment">Used for <strong>storing objects</strong></p>
+  <ul style="width: 100%">
+    <li class="fragment">If an object is removed...</li>
+    <li class="fragment">And references are garbage collected...</li>
+    <li class="fragment">The object is automatically removed from the Weak Set</li>
+    <li class="fragment"><strong>No more memory leak!</strong></li>
+  </ul>
+  <p class="fragment">
+    <img src="images/best-practise-bear.png" class="inline" width="100" style="position: relative; top: 30px; left: -10px" />
+    <span>Use Weak Sets when storing objects</span>
+  </p>
+</section>
+
+<section data-background="#93C0E7" id="weak-sets-2">
+  <pre class="highlight javascript" contenteditable>
+const weakSet = new WeakSet();
+<span class="fragment">weakSet.add(object);</span>
+<span class="fragment">weakSet.has(object);</span>
+<span class="fragment">weakSet.delete(object);</span></pre>
+  <ul>
+    <li class="fragment">These are the <strong>only functions</strong> you get!</li>
+    <li class="fragment">
+      Much simpler than the <strong>Set</strong> object
+      <ul>
+        <li class="fragment"><strong>No iterating</strong> over the objects</li>
+        <li class="fragment"><strong>No counting</strong> the number of objects</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+
+<section data-background="#D4F1FF" id="maps">
+  <h2><em>#15.</em> Maps</h2>
+  <div class="fragment">
+    Another type of object
+    <pre class="highlight javascript" contenteditable>
+const myMap = new Map();</pre>
+  </div>
+  <div class="fragment">
+    Very similar to a <strong>Set</strong>, but with key-value pairs
+    <pre class="highlight javascript" contenteditable>
+myMap.set('testKey', 'testValue');</pre>
+  </div>
+</section>
+
+<section data-background="#D4F1FF" id="maps-2">
+  <p>May have used objects in ES5</p>
+  <pre class="highlight javascript" contenteditable>
+const myMap = {
+  'testKey': 'testValue'
+}</pre>
+  <p class="fragment" style="position: relative; top: -30px">
+    <img src="images/best-practise-bear.png" class="inline" width="100" style="position: relative; top: 30px; left: -10px" />
+    <span>Maps are more readable, and easier to use</span>
+  </p>
+  <pre class="fragment highlight javascript" contenteditable>
+const myMap = new Map();
+myMap.set('testKey', 'testValue');
+<span class="fragment">myMap.has('testKey'); // true</span>
+<span class="fragment">myMap.get('testKey'); // 'testValue'</span>
+<span class="fragment">myMap.delete('testKey');</span>
+<span class="fragment">myMap.clear();</span>
+<span class="fragment">myMap.size;</span>
+<span class="fragment">myMap.keys();</span>
+<span class="fragment">myMap.values();</span>
+<span class="fragment">myMap.entries();</span>
+<span class="fragment">myMap.forEach();</span></pre>
+</section>
+
+<section data-background="#AFDCFB" id="weak-maps">
+  <h2><em>#16.</em> Weak Maps</h2>
+  <p class="fragment">The same concept as Weak Set</p>
+  <pre class="fragment highlight javascript" contenteditable>
+const weakMap = new WeakMap();
+<span class="fragment">weakMap.set(object, value);</span>
+<span class="fragment">weakMap.has(object);</span>
+<span class="fragment">weakMap.get(object);</span>
+<span class="fragment">weakMap.delete(object);</span></pre>
+  <p class="fragment">The keys are weak, not the value</p>
+</section>
+
+<section data-background="#D4F1FF" id="iterators">
+  <p><strong>Iterating arrays in ES5</strong></p>
+  <p class="fragment">Lots of choices</p>
+  <p class="fragment">None are great</p>
+</section>
+
+<section data-background="#D4F1FF" id="iterators-es5-1">
+  <pre class="highlight javascript" contenteditable>
+for (var index = 0; index < myArray.length; index++) {
+  var value = myArray[index];
+  // ...
+}</pre>
+  <ul>
+    <li class="fragment">A lot of code</li>
+  </ul>
+</section>
+
+<section data-background="#D4F1FF" id="iterators-es5-2">
+  <pre class="highlight javascript" contenteditable>
+myArray.forEach(function(value, index) {
+  // ...
+});</pre>
+  <ul>
+    <li class="fragment">Can't use 'break' or 'continue' keywords</li>
+    <li class="fragment">New scope</li>
+  </ul>
+</section>
+
+<section data-background="#D4F1FF" id="iterators-es5-3">
+  <pre class="highlight javascript" contenteditable>
+for (var index in myArray) {
+  var value = myArray[index];
+  // ...
+}</pre>
+  <ul>
+    <li class="fragment">Built for looping over object keys only</li>
+    <li class="fragment">Can loop over array in random order</li>
+  </ul>
+</section>
+
+<section data-background="#AFDCFB" id="iterators-es6">
+  <p><strong>Iterating arrays in ES6</strong></p>
+  <p>One choice</p>
+  <p>It's great!</p>
+</section>
+
+<section data-background="#AFDCFB" id="iterators-es6-2">
+  <h2><em>#16.</em> for of</h2>
+  <pre class="fragment highlight javascript" contenteditable>
+for (let value of myArray) {
+  // ...
+}
+</pre>
+  <pre class="fragment highlight javascript" contenteditable>
+for (let index of myArray.keys()) {
+  // ...
+}
+</pre>
+  <pre class="fragment highlight javascript" contenteditable>
+for (let [index, value] of myArray.entries()) {
+  // ...
+}
+</pre>
+</section>
+
+<section data-background="#AFDCFB" id="iterators-es6-3">
+  <p style="text-align: left">Works for any <strong>iterable object</strong></p>
+  <ul class="fragment" style="width: 100%">
+    <li>Arrays</li>
+    <li>Strings</li>
+    <li>Maps</li>
+    <li>Sets</li>
+  </ul>
+  <p class="fragment" style="text-align: left">For everything else, either;</p>
+  <ul style="width: 100%">
+    <li class="fragment">
+      Make it an iterable object <span class="fragment" style="font-size: 50%">(not enough time to show you today)</span>
+    </li>
+    <li class="fragment">Convert to an array using <strong>Array.from()</strong></li>
+  </ul>
+  <aside class="notes">
+    <ul>
+      <li>(last)</li>
+      <li>Can iterate over ANYTHING!</li>
+    </ul>
+  </aside>
+</section>
+
+<section data-background="#93C0E7" id="default-parameters">
+  <h2><em>#17.</em> Default parameters</h2>
+  <pre class="fragment highlight javascript" contenteditable>
+function displayMessage(content, priority = 1) {
+  <span class="fragment">console.log(`Priority: $(priority)`);</span>
+
+  <span class="fragment">// Some magic here to display the message</span>
+}
+
+<span class="fragment">displayMessage('Hello, I am a message');</span><span class="fragment"> // Priority: 1</span>
+<span class="fragment">displayMessage('Something went wrong!', 10);</span><span class="fragment"> // Priority: 10</span></pre>
+  <div class="fragment" style="position: relative; top: -50px;">
+    <img src="images/best-practise-bear.png" class="inline" width="100" style="position: relative; top: 45px; left: -10px" />
+    Always put default parameters last
+  </div>
+</section>
+
+<section data-background="#93C0E7" id="default-parameters-many">
+  <div style="position: relative; top: -50px;">
+    <img src="images/best-practise-bear.png" class="inline" width="100" style="position: relative; top: 45px; left: -10px" />
+    Avoid using too many parameters
+  </div>
+  <pre class="fragment highlight javascript full" contenteditable style="font-size: 47%">
+function displayMessage(content, priority = 1, position = { x: 0, y: 0 }, title = null) {
+  // Some magic here to display the message
+}</pre>
+  <pre class="fragment highlight javascript" contenteditable style="font-size: 52%">
+displayMessage('Default message');
+<span class="fragment">displayMessage('Centered message'<span class="fragment">, 1</span><span class="fragment">, { x: '50%', y: '50%'});</span>
+<span class="fragment">displayMessage('Error message with title'<span class="fragment">, 10</span><span class="fragment">, { x: 0, y: 0 }</span><span class="fragment">, 'Uh oh');</span></pre>
+  <ul>
+    <li class="fragment">Confusing to read</li>
+    <li class="fragment">
+      Embedding default parameters
+      <ul>
+        <li class="fragment">What if they changed?</li>
+      </ul>
+  </ul>
+</section>
+
+<section data-background="#93C0E7" id="default-parameters-many-2">
+  <div style="position: relative; top: -50px;">
+    <img src="images/best-practise-bear.png" class="inline" width="100" style="position: relative; top: 45px; left: -10px" />
+    Use destructuring!
+  </div>
+  <pre class="fragment highlight javascript full" contenteditable style="font-size: 45%">
+function displayMessage({ content, priority = 1, position = { x: 0, y: 0 }, title = null }) {
+  // Some magic here to display the message
+}</pre>
+  <div class="tiles">
+    <div class="tile">
+      <pre class="fragment highlight javascript" contenteditable style="font-size: 49%">
+displayMessage({
+  content: 'Default message'
+});
+
+<span class="fragment">displayMessage({
+  content: 'Centered message',
+  position: { x: '50%', y: '50%' }
+});</span>
+
+<span class="fragment">displayMessage({
+  content: 'Error message with title',
+  priority: 10,
+  title: 'Uh oh'
+});</span></pre>
+
+      </div>
+      <div class="tile">
+        <ul style="margin: 50px 0 0 80px">
+          <li class="fragment">Easier to read</li>
+          <li class="fragment">Override defaults only if needed</li>
+        </ul>
+        <div class="fragment">
+          <img src="images/best-practise-bear.png" class="inline" style="position: relative; top: 30px" />
+          I love you
+        </div>
+      </div>
+  </div>
+</section>
+
+<section data-background="#D4F1FF" id="class-intro">
+  <pre class="fragment highlight javascript" contenteditable style="font-size: 49%">
+const defaultMessage = {
+  content: 'Default message'
+};
+
+const centeredMessage = {
+  content: 'Centered message',
+  position: { x: '50%', y: '50%' }
+};
+
+const errorMessage = {
+  content: 'Error message with title',
+  priority: 10,
+  title: 'Uh oh'
+};</pre>
+  <p>
+    <img src="images/anteater.png" class="inline" width="70" style="position: relative; top: 30px; left: -10px" /> <span class="fragment">Is there a better way to represent a message?</span>
+  </p>
+</section>
+
+<section data-background="#AFDCFB" id="class">
+  <h2><em>#18.</em> Class</h2>
+  <p class="fragment"><strong>Custom</strong> type of object</p>
+  <p class="fragment">Has its own <strong>functions</strong> and <strong>properties</strong></p>
+  <pre class="fragment highlight javascript" contenteditable>
+class Message {
+  <span class="fragment">getContent() {
+    return 'Hello, I am a message';
+  }</span>
+}
+
+<span class="fragment">const myMessage = new Message();</span>
+
+<span class="fragment">console.log( myMessage.getContent() ); <span class="fragment">// Hello, I am a message</span></span></pre>
+  <div class="fragment" style="position: relative; top: -50px;">
+    <img src="images/best-practise-bear.png" class="inline" width="100" style="position: relative; top: 45px; left: -10px" />
+    Class names should be UpperCamelCase
+  </div>
+</section>
+
+<section data-background="#AFDCFB" id="class-loc">
+  <p>All these lines of code to create messages?!</p>
+  <pre class="fragment highlight javascript" contenteditable>
+class TestMessage {
+  getContent() {
+    return 'Hello, I am a message';
+  }
+}
+const myTestMessage = new TestMessage();
+
+<span class="fragment">class ErrorMessage {
+  getContent() {
+    return 'Something went wrong!';
+  }
+}
+const myErrorMessage = new ErrorMessage();</span></pre>
+  <div class="fragment" style="position: relative; top: -50px;">
+    <img src="images/best-practise-bear.png" class="inline" width="100" style="position: relative; top: 45px; left: -10px" />
+    A class represents a <strong>template</strong> for creating objects
+  </div>
+</section>
+
+<section data-background="#AFDCFB" id="class-loc-2">
+  <p>Just one class / template<span class="fragment"> - <strong>Message</strong></span></p>
+  <pre class="highlight javascript" contenteditable>
+<span class="fragment">const myMessage = new Message();</span>
+<span class="fragment">myMessage.setContent('Hello, I am a message');</span>
+<span class="fragment">console.log( myMessage.getContent() );<span class="fragment"> // Hello, I am a message!</span></span>
+
+<span class="fragment">const errorMessage = new Message();</span>
+<span class="fragment">errorMessage.setContent('Something went wrong!');</span>
+<span class="fragment">console.log( errorMessage.getContent() );<span class="fragment"> // Something went wrong!</span></pre>
+  <pre class="fragment highlight javascript" contenteditable>
+class Message {
+  <span class="fragment">setContent(content) {
+    <span class="fragment">this.content = content;</span>
+  }</span>
+  <span class="fragment">getContent() {
+    <span class="fragment">return this.content;</span>
+  }
+</span>}</pre>
+  <div class="fragment" style="position: relative; top: -50px;">
+    <img src="images/best-practise-bear.png" class="inline" width="100" style="position: relative; top: 45px; left: -10px" />
+    Aw yeah!
+  </div>
+</section>
+
+<section data-background="#93C0E7" id="class-getter-setter">
+  <h2><em>#19.</em> Class Getters & Setters</h2>
+  <ul>
+    <li class="fragment">Use like a regular object</li>
+    <li class="fragment">Less function calls</li>
+    <li class="fragment">Cleaner syntax</li>
+  </ul>
+  <pre class="fragment highlight javascript" contenteditable>
+const myMessage = new Message();
+<span class="fragment current-visible">myMessage.setContent('Hello, I am a test message');</span>
+<span class="fragment">myMessage.content = 'Hello, I am a test message';</span>
+<span class="fragment current-visible">console.log( myMessage.getContent() );</span>
+<span class="fragment">console.log( myMessage.content );</span></pre>
+  <pre class="fragment highlight javascript" contenteditable>
+class Message {
+  <span class="fragment">set content(content) {
+    this.content = content;
+  }</span>
+  <span class="fragment">get content() {
+    return this.content;
+  }</span>
+}</pre>
+</section>
+
+<section data-background="#93C0E7" id="class-getter-setter-problem">
+  <div class="fragment" style="position: relative; top: -50px;">
+    <img src="images/anteater.png" class="inline" width="100" style="position: relative; top: 45px; left: -10px" />
+    I see a bug!
+  </div>
+  <pre class="fragment highlight javascript" contenteditable>
+class Message {
+  set content(content) {
+    this.content = content;
+  }
+}</pre>
+  <div class="fragment">
+    <p>This may make it easier to spot</p>
+    <pre class="highlight javascript" contenteditable>
+class Message {
+  setContent(content) {
+    this.setContent(content);
+  }
+}</pre>
+  </div>
+  <p class="fragment"><strong>Maximum call stack size exceeded</strong></p>
+</section>
+
+<section data-background="#93C0E7" id="class-getter-setter-solution">
+  <pre class="highlight javascript" contenteditable>
+class Message {
+  set content(content) {
+    <span class="fragment strike">this.content = content;</span>
+    <span class="fragment">this._content = content;</span>
+  }
+
+  get content() {
+    <span class="fragment strike">return this.content;</span>
+    <span class="fragment">return this._content;</span>
+  }
+}</pre>
+  <div class="fragment" style="position: relative; top: -50px;">
+    <img src="images/best-practise-bear.png" class="inline" width="100" style="position: relative; top: 45px; left: -10px" />
+    <br /><br />
+    <div>Use a <strong>leading underscore _</strong></div>
+    <div>for <strong>private</strong> properties and functions</div>
+  </div>
+</section>
+
+<section data-background="#D4F1FF" id="class-why">
+  <p>This seems like a lot of work... why bother?</p>
+  <p class="fragment">You're right!</p>
+  <p class="fragment">A <strong>regular object</strong> does getters and setters</p>
+  <pre class="fragment highlight javascript" contenteditable>
+<span class="fragment">const myMessage = {};</span>
+<span class="fragment">myMessage.content = 'Hello, I am a test message';</span>
+<span class="fragment">console.log( myMessage.content ); // Hello, I am a test message</span></pre>
+  <pre class="fragment highlight javascript" contenteditable>
+class Message {
+  // Empty
+}</pre>
+  <pre class="fragment highlight javascript" contenteditable>
+<span class="fragment">const myMessage = new Message();</span>
+<span class="fragment">myMessage.content = 'Hello, I am a test message';</span>
+<span class="fragment">console.log( myMessage.content ); // Hello, I am a test message</span>
+<span class="fragment">myMessage.whatever = 'Anything goes';</span>
+<span class="fragment">console.log( myMessage.whatever ); // Anything goes</span></pre>
+</section>
+
+<section data-background="#93C0E7" id="class-clever">
+  <p>Let's get clever with classes</p>
+  <pre class="fragment highlight javascript" contenteditable style="font-size: 48%">
+class Message {
+
+  <span class="fragment">set priority(priority) {
+
+    <span class="fragment">if (priority < 1 || priority > 10) {
+      throw new Error('Priority must be between 1 and 10');
+    }</span>
+
+    <span class="fragment">this._priority = priority;</span>
+
+  }</span>
+
+  <span class="fragment">get priority() {
+    return this._priority;
+  }</span>
+}</pre>
+  <pre class="fragment highlight javascript full" contenteditable>
+<span class="fragment">const myMessage = new Message();</span>
+<span class="fragment">myMessage.priority = 20;</span><span class="fragment"> // ERROR: Priority must be between 1 and 10</span>
+<span class="fragment">myMessage.priority = 5;</span>
+<span class="fragment">console.log( myMessage.priority );</span><span class="fragment"> // 5</span>
+</pre>
+</section>
+
+<section data-background="#93C0E7" id="class-clever-2">
+  <pre class="highlight javascript" contenteditable style="font-size: 48%">
+class Message {
+  <span class="fragment">get log() {
+    <span class="fragment">return `${this.timestamp} - [${this.priority}] ${this.content}`;</span>
+  }</span>
+}</pre>
+<pre class="fragment highlight javascript full" contenteditable style="font-size: 52%">
+<span class="fragment">const myMessage = new Message();</span>
+<span class="fragment">myMessage.content = 'Hello, this is a test message';</span>
+<span class="fragment">myMessage.priority = 5;</span>
+<span class="fragment">myMessage.timestamp = new Date();</span>
+<span class="fragment">console.log( myMessage.log );</span>
+<span class="fragment">// Mon Nov 16 2015 20:24:01 GMT+0000 (GMT) - [5] Hello, this is a test message</span></pre>
+  <p class="fragment">Wouldn't it be nice if <strong>timestamp</strong> was automatically set?</p>
+</section>
+
+<section data-background="#AFDCFB" id="class-constructor">
+  <h2><em>#20.</em> Class constructors</h2>
+  <p>Function that runs when the class is created</p>
+  <pre class="fragment highlight javascript" contenteditable>
+class Message {
+  <span class="fragment">constructor() {
+    <span class="fragment">this.timestamp = new Date();</span>
+    <span class="fragment">this.priority = 5;</span>
+  }</span>
+}</pre>
+  <pre class="fragment highlight javascript" contenteditable style="font-size: 52%">
+<span class="fragment">const myMessage = new Message();</span>
+<span class="fragment">console.log( myMessage.timestamp );</span>
+<span class="fragment">// Mon Nov 16 2015 20:24:01 GMT+0000 (GMT)</span></pre>
+</section>
+
+<section data-background="#AFDCFB" id="class-constructor-2">
+  <p>Construtors accept parameters too</p>
+  <pre class="fragment highlight javascript" contenteditable>
+class Message {
+  constructor(content) {
+    this.content = content;
+    this.timestamp = new Date();
+    this.priority = 5;
+  }
+}</pre>
+  <pre class="fragment highlight javascript" contenteditable>
+const testMessage = new Message('This is a test message');</pre>
+</section>
+
+<section data-background="#93C0E7" id="class-extends">
+  <h2><em>#21.</em> Sub classing</h2>
+  <p class="fragment">Allows a class to inherit everything from another class</p>
+  <pre class="fragment highlight javascript" contenteditable>
+class DebugMessage extends Message {
+  // Empty
+}
+
+<span class="fragment">class ErrorMessage extends Message {
+  // Empty
+}</span></pre>
+  <pre class="fragment highlight javascript" contenteditable>
+const myDebugMessage = new DebugMessage('I am a debug message');
+<span class="fragment">const myErrorMessage = new ErrorMessage('I am an error message');</span></pre>
+  <p class="fragment">Everything still works!</p>
+</section>
+
+<section data-background="#93C0E7" id="class-extends-2">
+  <pre class="highlight javascript" contenteditable>
+class Message {
+  setContent(content) {
+    this.content = content;
+  }
+}</pre>
+  <pre class="fragment highlight javascript" contenteditable>
+class ErrorMessage extends Message {
+  <span class="fragment">setContent(content) {
+    <span class="fragment">content = content + '!!!';</span>
+    <span class="fragment">super.setContent(content);</span>
+  }</span>
+}</pre>
+  <pre class="fragment highlight javascript" contenteditable>
+const myMessage = new Message('I am a message');
+<span class="fragment">console.log( myMessage.content );</span><span class="fragment"> // I am a message</span>
+
+<span class="fragment">const myErrorMessage = new ErrorMessage('I am an error message');</span>
+<span class="fragment">console.log( myErrorMessage.content );</span><span class="fragment"> // I am an error message!!!</span></pre>
+</section>
+
+<section data-background="#93C0E7" id="class-extends-3">
+  <pre class="highlight javascript" contenteditable>
+class Message {
+  set content(content) {
+    this._content = content;
+  }
+}</pre>
+  <pre class="fragment highlight javascript" contenteditable>
+class ErrorMessage extends Message {
+  <span class="fragment">set content(content) {
+    <span class="fragment">content = content + '!!!';</span>
+    <span class="fragment">super.content = content</span>
+  }</span>
+}</pre>
+</section>
+
+<section data-background="#93C0E7" id="class-extends-4">
+  <pre class="highlight javascript" contenteditable>
+class Message {
+  constructor(content) {
+    this.content = content;
+    this.priority = 5;
+  }
+}</pre>
+  <pre class="fragment highlight javascript" contenteditable>
+class DebugMessage extends Message {
+  <span class="fragment">constructor(content) {
+    <span class="fragment">super(content);</span>
+    <span class="fragment">this.priority = 1;</span>
+  }</span>
+}</pre>
+  <pre class="fragment highlight javascript" contenteditable>
+<span class="fragment">const myMessage = new Message('I am a message');</span>
+<span class="fragment">console.log( myMessage.priority );</span><span class="fragment"> // 5</span>
+
+<span class="fragment">const myDebugMessage = new DebugMessage('Just testing');</span>
+<span class="fragment">console.log( myErrorMessage.priority );</span><span class="fragment"> // 1</span></pre>
+</section>
+
+<section data-background="#D4F1FF" id="arrow-functions">
+  <h2><em>#22.</em> Arrow functions</h2>
+  <p class="fragment">New syntax to easily create <strong>anonymous functions</strong></p>
+  <pre class="fragment highlight javascript" contenteditable>
+// ES5
+const debugMessages = messages.filter(function(message) {
+  return message.priority === 1;
+});</pre>
+  <pre class="fragment highlight javascript" contenteditable>
+//ES6
+const debugMessages = messages.filter((message) => {
+  return message.priority === 1;
+});</pre>
+</section>
+
+<section data-background="#D4F1FF" id="arrow-functions-2">
+  <pre class="highlight javascript" contenteditable>
+const debugMessages = messages.filter((message) => {
+  return message.priority === 1;
+});</pre>
+  <ul>
+    <li class="fragment">
+        If the anonymous function is just 1 single line
+      <ul>
+        <li class="fragment">The <strong>{</strong> and <strong>}</strong> can be removed</li>
+        <li class="fragment">The statement is automatically returned</li>
+      </ul>
+    </li>
+  </ul>
+  <pre class="fragment highlight javascript" contenteditable style="font-size: 50%">
+const debugMessages = messages.filter((message) => message.priority === 1);</pre>
+  <ul>
+    <li class="fragment">
+      If the anonymous function has just 1 parameter
+      <ul>
+        <li class="fragment">The <strong>(</strong> and <strong>)</strong> can be removed</li>
+      </ul>
+    </li>
+  </ul>
+  <pre class="fragment highlight javascript" contenteditable style="font-size: 50%">
+const debugMessages = messages.filter(message => message.priority === 1);</pre>
+</section>
+
+<section data-background="#AFDCFB" id="arrow-functions-so-what">
+  <div class="tiles">
+    <div class="tile">
+      <pre class="fragment highlight javascript" contenteditable style="font-size: 50%">
+// ES5 anonymous function
+
+function(param1, param2) {
+  // ...
+}
+</pre>
+    </div>
+    <div class="tile">
+      <pre class="fragment highlight javascript" contenteditable style="font-size: 50%">
+// ES6 arrow function
+
+(param1, param2) => {
+  // ...
+}
+</pre>
+    </div>
+  </div>
+  <p class="fragment">They look different... <span class="fragment"><strong>so what?</strong></span></p>
+</section>
+
+<section data-background="#AFDCFB" id="arrow-functions-class">
+  <p>
+    <img src="images/anteater.png" class="inline" width="100" style="position: relative; top: 45px; left: -10px" />
+    <span class="fragment">What's wrong with this code?</span>
+  </p>
+  <br />
+  <pre class="fragment highlight javascript" contenteditable>
+class Message {
+
+  <span class="fragment">constructor() {
+    this.priority = 5;
+  }</span>
+
+  <span class="fragment">increasePriorityEverySecond() {
+    setInterval(function() {
+      this.priority = this.priority + 1;
+    }, 1000);
+  }</span>
+
+}</pre>
+</section>
+
+<section data-background="#AFDCFB" id="arrow-functions-class-2">
+  <pre class="highlight javascript" contenteditable>
+class Message {
+  increasePriorityEverySecond() {
+    <span class="emphasis">var self = this;</span>
+    setInterval(function() {
+      <span class="emphasis">self</span>.priority = <span class="emphasis">self</span>.priority + 1;
+    }, 1000);
+  }
+}</pre>
+  <pre class="fragment highlight javascript" contenteditable>
+class Message {
+  increasePriorityEverySecond() {
+    setInterval(function() {
+      this.priority = this.priority + 1;
+    }<span class="emphasis">.bind(this)</span>, 1000);
+  }
+}</pre>
+</section>
+
+<section data-background="#AFDCFB" data-transition="fade" id="arrow-functions-class-3">
+  <p class="fragment">Arrow functions retain <strong>this</strong> from parent scope</p>
+  <pre class="fragment highlight javascript" contenteditable>
+class Message {
+  increasePriorityEverySecond() {
+    setInterval(() => {
+      this.priority = this.priority + 1;
+    }, 1000);
+  }
+}</pre>
+</section>
+
+<section data-background="#AFDCFB" data-transition="fade" id="arrow-functions-class-4">
+  <pre class="highlight javascript" contenteditable>
+class Message {
+  increasePriorityEverySecond() {
+    setInterval(() => this.priority = this.priority + 1, 1000);
+  }
+}</pre>
+</section>
+
+<section data-background="#AFDCFB" data-transition="fade" id="arrow-functions-class-5">
+  <pre class="highlight javascript" contenteditable>
+class Message {
+  increasePriority() {
+    this.priority = this.priority + 1
+  }
+  <span class="fragment">increasePriorityEverySecond() {
+    setInterval(() => this.increasePriority(), 1000);
+  }</span>
+}</pre>
+  <div class="fragment" style="position: relative; top: -50px;">
+    <img src="images/best-practise-bear.png" class="inline" width="100" style="position: relative; top: 45px; left: -10px" />
+    Yessss
+  </div>
+</section>
+
+<section data-background="#93C0E7" data-transition="fade" id="modules">
+  <pre class="highlight javascript" contenteditable><span class="fragment">
+// Globals
+var myModule = window.myModule;
+</span><span class="fragment">
+// AMD / RequireJS
+define(['myModule'], function(myModule) { });
+</span><span class="fragment">
+// CommonJS / npm
+module.exports = myModule;
+var myModule = require('myModule');
+</span><span style="visibility: hidden">
+// ES6
+export myModule;
+import { myModule } from 'myModule';</span></pre>
+  <aside class="notes">
+    <ul>
+      <li>No decisions to make</li>
+      <li>It's baked right into Javascript</li>
+    </ul>
+  </aside>
+</section>
+
+<section data-background="#93C0E7" data-transition="fade" id="modules-2">
+  <pre class="highlight javascript" contenteditable><span class="strike">
+// Globals
+var myModule = window.myModule;
+
+// AMD / RequireJS
+define(['myModule'], function(myModule) {});
+
+// CommonJS / npm
+module.exports = myModule;
+var myModule = require('myModule');</span>
+<span class="fragment">
+// ES6 modules
+export myModule;
+import { myModule } from 'myModule';</span></pre>
+</section>
+
+<section data-background="#93C0E7" id="module-3">
+  <h2><em>#23.</em> Modules</h2>
+  <pre class="highlight javascript" contenteditable>
+// message.js
+
+export class Message {
+  // ...
+}</pre>
+  <pre class="fragment highlight javascript" contenteditable>
+// main.js
+
+import { Message } from './message';
+
+const myMessage = new Message();</pre>
+</section>
+
+<section data-background="#93C0E7" id="modules-multiple">
+  <p>Multiple exports</p>
+  <pre class="fragment highlight javascript" contenteditable>
+// message.js
+
+<span class="fragment">export class Message {
+  // ...
+}</span>
+<span class="fragment">export function displayMessage(message) {
+  // ...
+}</span></pre>
+  <p class="fragment">Multiple imports</p>
+  <pre class="fragment highlight javascript" contenteditable style="font-size: 49%">
+// main.js
+
+import { Message, displayMessage } from './message';
+
+<span class="fragment">const myMessage = new Message();</span>
+
+<span class="fragment">displayMessage(myMessage);</span></pre>
+</section>
+
+<section data-background="#93C0E7" id="modules-alias">
+  <pre class="highlight javascript" contenteditable>
+// /vendor/message.js
+
+export class Message {}</pre>
+  <pre class="fragment highlight javascript" contenteditable>
+// /app/message.js
+
+export class Message {}</pre>
+  <p class="fragment">Named imports</p>
+  <pre class="fragment highlight javascript" contenteditable>
+import { Message as MessageVendor } from '/vendor/message.js';
+import { Message as MessageApp } from '/app/message.js';</pre>
+</section>
+
+<section data-background="#D4F1FF" id="modules-bundling">
+  <h2>The ES6 Module Problem</h2>
+  <p class="fragment">ES6 <strong>does not</strong> specify a standard for <strong>loading</strong> files</p>
+  <p class="fragment">ES6 <strong>only</strong> specifies a standard for<br />the <strong>import</strong> & <strong>export</strong> syntax</p>
+  <pre class="fragment highlight javascript" contenteditable style="font-size: 51%">
+import { nope } from '../the/browser/does/not/know/how/to/load/this/file';
+</pre>
+  <p class="fragment"><strong>Solution</strong></p>
+  <ol>
+    <li class="fragment">
+      Use a bundling tool that understands ES6 modules
+      <ul>
+        <li class="fragment">jspm</li>
+      </ul>
+    </li>
+    <li class="fragment">
+      Setup your bundling tool to understand ES6 modules
+      <ul>
+        <li class="fragment">
+          Browserify<span class="fragment"> - 'Babelify'</span>
+        </li>
+        <li class="fragment">
+          Webpack<span class="fragment"> - Babel loader</span>
+        </li>
+      </ul>
+    </li>
+  </ol>
+</section>
+
+<section data-background="#AFDCFB" data-transition="fade" id="promises-es5">
+  <h2 class="fragment current-display">Prepare yourself...</h2>
+  <pre class="fragment highlight javascript full" contenteditable style="font-size: 48%">
+testInternetConnection(function() {
+  fetchMessagesFromServer(function(messages) {
+    messages = JSON.parse(messages);
+    if (messages[0] == null) {
+      displayError('Could not email first message');
+      logger.log('First message does not exist');
+    } else {
+      sendEmail(
+        'test@example.com',
+        'Here is the first message: ' + messages[0],
+        function() {
+          displayMessage('Success!');
+        },
+        function(error) {
+          displayError('Could not email first message');
+          logger.log('Error sending email: ' + error);
+        }
+      );
+    }
+  }, function(error) {
+    displayError('Could not email first message');
+    logger.log('Error fetching messages from server: ' + error);
+  });
+}, function(error) {
+  displayError('Could not email first message');
+  logger.log('Internet connection test failed: ' + error);
+});</pre>
+</section>
+
+<section data-background="#93C0E7" data-transition="fade" id="promises-es5-2">
+  <h2 class="fragment current-display">Is this better?</h2>
+  <pre class="fragment highlight javascript full" contenteditable style="font-size: 46%">
+testInternetConnection({
+  onComplete: function() {
+    fetchMessagesFromServer({
+      onComplete: function(messages) {
+        messages = JSON.parse(messages);
+        if (messages[0] == null) {
+          displayError('Could not email first message');
+          logger.log('First message does not exist');
+        } else {
+          sendEmail({
+            email: 'test@example.com',
+            message: 'Here is the first message: ' + messages[0],
+            onComplete: function() {
+              displayMessage('Success!');
+            },
+            onError: function(error) {
+              displayError('Could not email first message');
+              logger.log('Error sending email: ' + error);
+            }
+          });
+        }
+      },
+      onError: function(error) {
+        displayError('Could not email first message');
+        logger.log('Error fetching messages from server: ' + error);
+      }
+    });
+  },
+  onError: function(error) {
+    displayError('Could not email first message');
+    logger.log('Internet connection test failed: ' + error);
+  }
+});</pre>
+</section>
+
+<section data-background="#93C0E7" id="promises">
+  <p>There's a better way...</p>
+  <h2 class="fragment"><em>#24.</em> Promises</h2>
+</section>
+
+<section data-background="#93C0E7" id="promises-eg">
+  <pre class="highlight javascript" contenteditable>
+<span class="fragment">function fetchMessagesFromServer() {
+
+  <span class="fragment">// This function takes time</span>
+  <span class="fragment">// Return to caller a Promise object straight away</span>
+  <span class="fragment">// After some time has passed, update the Promise with either;</span>
+  <span class="fragment">// 1. A value (yay)</span>
+  <span class="fragment">// 2. An error (aw)</span>
+
+  <span class="fragment">return new Promise</span><span class="fragment">(function(resolve, reject) {</span>
+
+    <span class="fragment">jQuery.get('http://example.com/messages.json')</span><span class="fragment"> // (time passes)</span>
+      <span class="fragment">.done(function(result) {
+        <span class="fragment">// Update the Promise with a value</span>
+        <span class="fragment">resolve(result);</span>
+      })</span>
+      <span class="fragment">.fail(function() {
+        <span class="fragment">// Update the Promise with an error</span>
+        <span class="fragment">reject('Could not fetch messages from server');</span>
+      })</span>
+
+  <span class="fragment">});</span>
+
+}</span></pre>
+</section>
+
+<section data-background="#93C0E7" id="promises-caller">
+  <pre class="highlight javascript" contenteditable>
+const messages = fetchMessagesFromServer();
+<span class="fragment">console.log( messages );</span><span class="fragment"> // Promise</span><span class="fragment"> - what do I do with this?!</span></pre>
+</section>
+
+<section data-background="#93C0E7" id="promises-caller-2">
+  <pre class="highlight javascript" contenteditable>
+fetchMessagesFromServer()
+  <span class="fragment">.then(function(value) {
+    <span class="fragment">// Promise resolved</span>
+    <span class="fragment">console.log(value);</span>
+  })</span>
+  <span class="fragment">.catch(function(value) {
+    <span class="fragment">// Promise rejected</span>
+    <span class="fragment">console.log(value);</span>
+  });</span></pre>
+</section>
+
+
+<section data-background="#D4F1FF" id="promises-so-what">
+  <p>So what?</p>
+  <div class="tiles">
+    <div class="tile">
+      <pre class="fragment highlight javascript" contenteditable>
+fetchMessagesFromServer()
+  .then(function(messages) {
+    // ...
+  })
+  .catch(function(error) {
+    // ...
+  });</pre>
+    </div>
+    <div class="tile">
+      <pre class="fragment highlight javascript" contenteditable>
+fetchMessagesFromServer(
+  function(messages) {
+    // ...
+  },
+  function(error) {
+    // ...
+  }
+);</pre>
+    </div>
+  </div>
+  <div class="tiles">
+    <div class="tile">
+      <pre class="fragment highlight javascript" contenteditable>
+fetchMessagesFromServer({
+  onComplete: function(messages) {
+    // ...
+  },
+  onError: function(error) {
+    // ...
+  }
+});</pre>
+    </div>
+    <div class="tile">
+      <pre class="fragment highlight javascript" contenteditable>
+fetchMessagesFromServer()
+  .done(function(messages) {
+    // ...
+  })
+  .fail(function(error) {
+    // ...
+  });</pre>
+    </div>
+  </div>
+</section>
+
+<section data-background="#AFDCFB" id="promises-chaining">
+  <p>The power of Promises:</p>
+  <p class="fragment"><strong>Chaining them together</strong></p>
+</section>
+
+<section data-background="#AFDCFB" id="promises-chaining-1">
+  <p>The function within <strong>then()</strong> can do 3 types of things;</p>
+  <p class="fragment">1. Return another promise</p>
+  <pre class="fragment highlight javascript" contenteditable>
+fetchMessagesFromServer()
+  .then(function(messages) {
+    <span class="fragment">const promise = sendEmail('test@example.com', messages);</span>
+    <span class="fragment">return promise;</span>
+  })
+  <span class="fragment">.then(function(email) {
+    // ...
+  })</span>
+  <span class="fragment">.catch(function(error) {
+    // ...
+  });</span>
+  </pre>
+  <ul>
+    <li class="fragment">
+      If the Promise is resolved...
+      <ul>
+        <li class="fragment">Move to the next 'then' block</li>
+      </ul>
+    </li>
+    <li class="fragment">
+      If the Promise is rejected...
+      <ul>
+        <li class="fragment">Move to the next 'catch' block</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+
+<section data-background="#AFDCFB" id="promises-chaining-2">
+  <p>The function within <strong>then()</strong> can do 3 types of things;</p>
+  <p class="fragment">2. Return a value</p>
+  <pre class="fragment highlight javascript" contenteditable>
+fetchMessagesFromServer()
+  .then(function(messages) {
+    <span class="fragment">return messages[0];</span>
+  })
+  <span class="fragment">.then(function(firstMessage) {
+    // ...
+  });</span>
+  </pre>
+  <p class="fragment">This is the same as resolving a Promise</p>
+</section>
+
+<section data-background="#AFDCFB" id="promises-chaining-3">
+  <p>The function within <strong>then()</strong> can do 3 types of things;</p>
+  <p class="fragment">3. Throw an error</p>
+  <pre class="fragment highlight javascript" contenteditable>
+fetchMessagesFromServer()
+  .then(function(messages) {
+    <span class="fragment">// Try to do something a little crazy</span>
+    <span class="fragment">throw new Error('Uh oh');</span>
+  })
+  <span class="fragment">.catch(function(error) {
+    // ...
+  });</span>
+  </pre>
+  <p class="fragment">This is the same as rejecting a Promise</p>
+</section>
+
+<section data-background="#93C0E7" data-transition="fade" id="promises-es6-full">
+  <pre class="highlight javascript full" contenteditable>
+testInternetConnection()
+  <span class="fragment">.then(function() {
+    <span class="fragment">return fetchMessagesFromServer();</span>
+  })</span>
+  <span class="fragment">.then(function(messages) {
+    <span class="fragment">return JSON.parse(messages);</span>
+  })</span>
+  <span class="fragment">.then(function(messages) {
+    <span class="fragment">if (messages[0] == null) {
+      throw new Error('First message does not exist');
+    } else {
+      return messages[0];
+    }</span>
+  })</span>
+  <span class="fragment">.then(function(firstMessage)) {
+    <span class="fragment">return sendEmail(
+      'test@example.com',
+      'Here is the first message: ' + firstMessage
+    );</span>
+  })</span>
+  <span class="fragment">.then(function() {
+    <span class="fragment">displayMessage('Success!');</span>
+  })</span>
+  <span class="fragment">.catch(function(error) {
+    <span class="fragment">displayError('Could not email first messsage');</span>
+    <span class="fragment">logger.log(error);</span>
+  });</span>
+</pre>
+  <aside class="notes">
+    <ul>
+      <li>If an error is thrown within JSON.parse</li>
+      <li>eg: Syntax error due to invalid JSON</li>
+      <li>Then we end up in `catch()`</li>
+    </ul>
+  </aside>
+</section>
+
+<section data-background="#D4F1FF" id="promises-better">
+  <h2>We can do better!</h2>
+</section>
+
+<section data-background="#D4F1FF" id="promises-best">
+  <pre class="highlight javascript full" contenteditable style="font-size: 47%">
+<span class="fragment">class MessageService {
+  <span class="fragment">fetchMessagesAsJson() {
+    <span class="fragment">return testInternetConnection()</span>
+      <span class="fragment">.then(fetchMessagesFromServer)</span>
+      <span class="fragment">.then(JSON.parse);</span>
+  }</span>
+}</span>
+
+<span class="fragment">class MessageEmailer {
+  <span class="fragment">_getFirstMessage(messages) {
+    <span class="fragment">if (messages[0] == null) {
+      throw new Error('First message does not exist');
+    } else {
+      return messages[0];
+    }</span>
+  }</span>
+  <span class="fragment">_emailMessage(message) {
+    <span class="fragment">return sendEmail(
+      this.email,
+      'Here is the message: ' + message
+    );</span>
+  }</span>
+  <span class="fragment">send(email) {
+    <span class="fragment">MessageService.fetchMessagesAsJson()</span>
+      <span class="fragment">.then(this._getFirstMessage)</span>
+      <span class="fragment">.then(this._emailMessage)</span>
+      <span class="fragment">.then(() => displayMessage('Success!'))</span>
+      <span class="fragment">.catch((error) => {
+        displayError('Could not email message');
+        console.log(error);
+      })</span>
+  }</span>
+}</span></pre>
+  <aside class="notes">
+    <ul>
+      <li>If an error is thrown within JSON.parse</li>
+      <li>eg: Syntax error due to invalid JSON</li>
+      <li>Then we end up in `catch()`</li>
+    </ul>
+  </aside>
+</section>
+
+<section data-background="#AFDCFB" id="done">
+  <h1>You made it!</h1>
+  <h2>24 features of ES6</h2>
+  <p class="fragment" style="text-align: left">Yes, there are more...</p>
+  <ul class="fragment" style="width: 80%">
+    <li>Symbols</li>
+    <li>Proxies</li>
+    <li>Generators</li>
+    <li>... EVEN MORE!</li>
+  </ul>
+</section>
+
+<section data-background="#AFDCFB" id="done-try">
+  <h2>Try ES6 now</h2>
+  <img class="fragment" src="images/babel-try.png" />
+  <img class="fragment" src="images/code-pen.png" />
+</section>
+
+<section data-background="#AFDCFB" id="done-links">
+  <h2>Links</h2>
+  <table style="font-size: 80%; width: 100%">
+    <tr>
+      <th style="width: 25%">This</th>
+      <td>turnbullm.github.io/javascript-2015-presentation</td>
+    </tr>
+    <tr>
+      <th>Summary</th>
+      <td>github.com/lukehoban/es6features</td>
+    </tr>
+    <tr>
+      <th>Detail</th>
+      <td>es6-features.org</td>
+    </tr>
+    <tr>
+      <th>Interactive lessons</th>
+      <td>learnharmony.org</td>
+    </tr>
+    <tr>
+      <th>TDD style lessons</th>
+      <td>es6katas.org</td>
+    </tr>
+    <tr>
+      <th>Reference</th>
+      <td>developer.mozilla.org</td>
+    </tr>
+  </table>
+</section>
+
+<section data-background="#AFDCFB" id="done-now">
+  <h2>Now you know</h2>
+  <ul>
+    <li class="fragment"><strong>7 reasons</strong> to use ES6 <strong>now</strong></li>
+    <li class="fragment"><strong>How</strong> to use ES6 <strong>now</strong> with <strong>Babel</strong></li>
+    <li class="fragment"><strong>24 features</strong> of ES6<span class="fragment"> to use <strong>now!</strong></span></li>
+  </ul>
+  <br /><br />
+  <p class="fragment">Final message...</p>
+  <h2 class="fragment">Use ES6 now!</h2>
+  <div class="fragment" style="position: relative; top: 50px">
+    <p>Do it for Barry</p>
+    <img src="images/best-practise-bear.png" class="inline" width="100" style="position: relative; top: -35px" />
+  </div>
+</section>
+
+<!-- END SLIDES -->
+
+</div>
+</div>
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+<script>
+
+  // Full list of configuration options available at:
+  // https://github.com/hakimel/reveal.js#configuration
+  Reveal.initialize({
+    controls: false,
+    progress: true,
+    history: true,
+    center: true,
+    previewLinks: true,
+
+    transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+    // Optional reveal.js plugins
+    dependencies: [
+      //{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      //{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      //{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+
+      //{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+      {
+        src: 'plugin/highlight/highlight.js',
+        async: true,
+        callback: function() {
+          hljs.configure({tabReplace: '  '});
+          [].forEach.call(
+            document.querySelectorAll( '.highlight' ),
+            function(v, i) {
+              hljs.highlightBlock(v);
+            }
+          );
+        }
+      },
+
+      { src: 'plugin/zoom-js/zoom.js', async: true },
+      { src: 'plugin/notes/notes.js', async: true }
+    ]
+  });
+
+</script>
+
+</body>
+</html>
