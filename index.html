@@ -704,6 +704,18 @@ var numbers = [1, 5, 10];
   <p class="fragment">Limits variable to block scope</p>
 
   <pre class="fragment highlight javascript" contenteditable>
+let myBestFriend = 'Barry';
+
+if (true) {
+  let myBestFriend = 'Anthony';
+  <span class="fragment">console.log( myBestFriend );</span> <span class="fragment">// Anthony</span>
+}
+
+<span class="fragment">console.log( myBestFriend );</span> <span class="fragment">// Barry</span></pre>
+</section>
+
+<section data-background="#AFDCFB" id="let-2">
+  <pre class="fragment highlight javascript" contenteditable>
 let numbers = [1, 5, 10];
 <span class="fragment">let result = 0;</span>
 <span class="fragment">for (let i = 0; i < numbers.length; i++) {
@@ -729,7 +741,7 @@ const myConstant = 'never changes';
   <img src="images/best-practise-bear.png" class="fragment inline" style="position: absolute; left: 22px;" />
   <p class="fragment" style="text-align: left; margin-left: 150px; margin-top: 35px">Use <strong>const</strong> instead of <strong>let</strong></p>
   <p class="fragment" style="text-align: left; margin-left: 150px; margin-top: -20px;">Guarantees references won't be overridden</p>
-  <p class="fragment" style="text-align: left; margin-left: 200px; margin-top: -10px; font-size: 80%">(if you need references overriden, then use <strong>let</strong>)</p>
+  <p class="fragment" style="text-align: left; margin-left: 200px; margin-top: -10px; font-size: 90%">If you need references overridden, use <strong>let</strong></p>
 </section>
 
 <section data-background="#93C0E7" id="string-features">
