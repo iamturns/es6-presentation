@@ -851,13 +851,36 @@ function joinWords() {
 }</pre>
   <div class="fragment" style="position: relative; top: -50px;">
     <img src="images/best-practise-bear.png" class="inline" width="100" style="position: relative; top: 45px; left: -10px" />
-    There must be a better way...
+    Use spread!
   </div>
+</section>
+
+  <!--
+  <pre class="fragment highlight javascript" contenteditable>
+const words = ['I', 'love', 'Barry'];
+<span class="fragment">const sentence = joinWords(...words);</span>
+<span class="fragment">const sentence = joinWords('I', 'love', 'Barry'); // Same thing!</span></pre>
+-->
+
+<section data-background="#D4F1FF" id="array-spread">
+  <h2><em>#9.</em> Spread operator</h2>
+  <p>Allows expressions to be <strong>expanded</strong> into <strong>arguments</strong></p>
+  <p class="fragment">Represented by <strong>3 dots</strong></p>
+  <pre class="fragment highlight javascript" contenteditable>
+function joinWords(...words) {
+  // 'words' is an array!
+  // Join the words and return them
+}</pre>
+  <pre class="fragment highlight javascript" contenteditable>
+const sentence = joinWords('I', 'love', 'Barry'); // This works</pre>
 </section>
 
 <section data-background="#93C0E7" id="array-spread-es5-2">
   <pre class="fragment highlight javascript" contenteditable>
-const words = ['I', 'love', 'Barry'];</pre>
+const sentence = joinWords('I', 'love', 'Barry'); // This works
+
+<span class="fragment">const words = ['I', 'love', 'Barry'];</span>
+<span class="fragment">const sentence = joinWords(words);</span><span class="fragment"> // This doesn't work</span></pre>
   <div style="position: relative; top: -35px;">
     <img src="images/anteater.png" class="inline" width="100" style="position: relative; top: 45px; left: -10px" />
     <span class="fragment">Call <strong>joinWords</strong> with an array</span>
@@ -873,27 +896,19 @@ const sentence = joinWords.apply(null, words);</pre>
   </div>
 </section>
 
-<section data-background="#D4F1FF" id="array-spread">
-  <h2><em>#9.</em> Spread operator</h2>
-  <p>Allows expressions to be <strong>expanded</strong> into <strong>arguments</strong></p>
-  <p class="fragment">Represented by <strong>3 dots</strong></p>
-  <pre class="fragment highlight javascript" contenteditable>
-const words = ['I', 'love', 'Barry'];
-<span class="fragment">const sentence = joinWords(...words);</span>
-<span class="fragment">const sentence = joinWords('I', 'love', 'Barry'); // Same thing!</span></pre>
-  <pre class="fragment highlight javascript" contenteditable>
-function joinWords(...words) {
-  // 'words' is an array!
-}</pre>
-</section>
-
 <section data-background="#D4F1FF" id="array-spread-2">
   <pre class="highlight javascript" contenteditable>
-const sentence = joinWords(...['I', 'love', 'Barry']);
+const words = ['I', 'love', 'Barry'];
+<span class="fragment">const sentence = joinWords(<span class="fragment">...words</span>);</span>
+
+<span class="fragment">const sentence = joinWords('I', 'love', 'Barry'); // Same thing!</span>
 </pre>
   <pre class="fragment highlight javascript" contenteditable>
 const words = ['I', 'love'];
-const sentence = joinWords(...words, 'my', ...['friend', 'Barry']);</pre>
+<span class="fragment">const sentence = joinWords(...words</span><span class="fragment">, 'my'</span><span class="fragment">, ...['friend', 'Barry']);</span>
+
+<span class="fragment">const sentence = joinWords('I', 'love', 'my', 'friend', 'Barry');
+// Same thing!</span></pre>
   <pre class="fragment highlight javascript" contenteditable>
 const words = ['I', 'love', 'Barry'];
 const wordsCopy = [...words];</pre>
@@ -922,7 +937,9 @@ const [x, y] = position;</pre>
   <p class="fragment">Works with spreads</p>
   <pre class="fragment highlight javascript" contenteditable>
 const [a, b, ...rest] = [1, 2, 3, 4, 5];
-console.log( rest ); // [3, 4, 5]</pre>
+<span class="fragment">console.log( a ); <span class="fragment">// 1</span></span>
+<span class="fragment">console.log( b ); <span class="fragment">// 2</span></span>
+<span class="fragment">console.log( rest ); <span class="fragment">// [3, 4, 5]</span></span></pre>
   <p class="fragment">Works even better with objects</p>
 <pre class="fragment highlight javascript" contenteditable>
 function getPosition() {
