@@ -744,25 +744,46 @@ const myConstant = 'never changes';
   <p class="fragment" style="text-align: left; margin-left: 200px; margin-top: -10px; font-size: 90%">If you need references overridden, use <strong>let</strong></p>
 </section>
 
-<section data-background="#93C0E7" id="string-features">
+<section data-background="#93C0E7" data-transition="fade" id="string-features">
   <h2>New string functions</h2>
-  <ul>
-    <li class="fragment"><em>#3.</em> string.startsWith()</li>
-    <li class="fragment"><em>#4.</em> string.endsWith()</li>
-    <li class="fragment"><em>#5.</em> string.includes()</li>
-  </ul>
+  <h4 class="fragment"><em>#3.</em> string.startsWith()</h4>
   <pre class="fragment highlight javascript" contenteditable>
-const testString = 'testing';
+const testString = 'anthony';</pre>
+  <pre class="fragment highlight javascript" contenteditable>
+<span class="fragment">testString.startsWith('a');<span class="fragment"> // true</span></span>
+<span class="fragment">testString.startsWith('ant');<span class="fragment"> // true</span></span>
 
-<span class="fragment">testString.startsWith('t'); // true</span>
-<span class="fragment">testString.startsWith('test'); // true</span>
-<span class="fragment">testString.startsWith('e', 1); // true</span>
-<span class="fragment">testString.startsWith('est', 1); // true</span>
+<span class="fragment">// Second parameter: position to begin searching</span>
 
-<span class="fragment">testString.endsWith('ing'); // true</span>
-<span class="fragment">testString.endsWith('tin', 1); // true</span>
+<span class="fragment">testString.startsWith('thon', 2);<span class="fragment"> // true</span></span></pre>
+</section>
 
-<span class="fragment">testString.includes('sti'); // true</span></pre>
+<section data-background="#93C0E7" data-transition="fade" id="string-features-2">
+  <h2>New string functions</h2>
+  <h4 class="fragment"><em>#4.</em> string.includes()</h4>
+  <pre class="fragment highlight javascript" contenteditable>
+const testString = 'anthony';</pre>
+  <pre class="fragment highlight javascript" contenteditable>
+<span class="fragment">testString.includes('tho'); <span class="fragment">// true</span></span>
+
+<span class="fragment">// Second parameter: position to begin searching</span>
+
+<span class="fragment">testString.includes('ant', 1); <span class="fragment">// false</span></span></pre>
+</section>
+
+<section data-background="#93C0E7" data-transition="fade" id="string-features-3">
+  <h2>New string functions</h2>
+  <h4 class="fragment"><em>#5.</em> string.endsWith()</h4>
+  <pre class="fragment highlight javascript" contenteditable>
+const testString = 'anthony';</pre>
+  <pre class="fragment highlight javascript" contenteditable>
+<span class="fragment">testString.endsWith('ony'); // true</span>
+
+<span class="fragment">// Second parameter: clip string to this length</span>
+
+<span class="fragment">testString.endsWith('hon', 1);<span class="fragment"> // false</span></span>
+<span class="fragment">testString.endsWith('a', 1);<span class="fragment"> // true</span></span>
+<span class="fragment">testString.endsWith('hon', testString.length - 1);<span class="fragment"> // true</span></span></pre>
 </section>
 
 <section data-background="#D4F1FF" id="array-from">
