@@ -1545,8 +1545,8 @@ for (let [index, value] of myArray.entries()) {
   <ul class="fragment" style="width: 100%">
     <li>Arrays</li>
     <li>Strings</li>
-    <li>Maps</li>
     <li>Sets</li>
+    <li>Maps</li>
   </ul>
   <p class="fragment" style="text-align: left">For everything else, either;</p>
   <ul style="width: 100%">
@@ -1608,24 +1608,20 @@ displayMessage('Default message');
     <img src="images/best-practise-bear.png" class="inline" width="100" style="position: relative; top: 45px; left: -10px" />
     Use destructuring!
   </div>
-  <pre class="fragment highlight javascript full" contenteditable style="font-size: 45%">
-function displayMessage({ content, priority = 1, position = { x: 0, y: 0 }, title = null }) {
+  <pre class="fragment highlight javascript full" contenteditable style="font-size: 42%">
+function displayMessage(content, { priority = 1, position = { x: 0, y: 0 }, title = null } = {}) {
   // Some magic here to display the message
 }</pre>
   <div class="tiles">
     <div class="tile">
       <pre class="fragment highlight javascript" contenteditable style="font-size: 49%">
-displayMessage({
-  content: 'Default message'
-});
+displayMessage('Default message');
 
-<span class="fragment">displayMessage({
-  content: 'Centered message',
+<span class="fragment">displayMessage('Centered message', {
   position: { x: '50%', y: '50%' }
 });</span>
 
-<span class="fragment">displayMessage({
-  content: 'Error message with title',
+<span class="fragment">displayMessage('Error with title', {
   priority: 10,
   title: 'Uh oh'
 });</span></pre>
