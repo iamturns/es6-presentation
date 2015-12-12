@@ -10,7 +10,7 @@ After 6 years, Javascript standards have updated
 View online
 -----------
 
-- [Intro](http://turnbullm.github.io/js-2015-preso/)
+- [Intro & brief Javascript history](http://turnbullm.github.io/js-2015-preso/)
 - [7 reasons why you should care](http://turnbullm.github.io/js-2015-preso/#/preso-why)
 - [Browser support](http://turnbullm.github.io/js-2015-preso/#/browser-support-intro)
 - [Babel](http://turnbullm.github.io/js-2015-preso/#/babel)
