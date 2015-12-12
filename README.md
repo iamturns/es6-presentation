@@ -1,7 +1,9 @@
 Javascript 2015 Presentation
 ============================
 
-Presented to developer team @ [AnalogFolk](http://analogfolk.com)
+View online @ [http://turnbullm.github.io/js-2015-preso](http://turnbullm.github.io/js-2015-preso/)
+
+Presented to developer team @ [AnalogFolk](http://analogfolk.com) on (TBC)
 
 Built with [reveal.js](https://github.com/hakimel/reveal.js/) ([docs](README-reveal-js.md))
 

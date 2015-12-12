@@ -140,7 +140,6 @@ var title = ['Welcome', 'To', 'Javascript', '2015']
 
 <section data-background="#AFDCFB" id="es5">
   <h3>ECMAScript Version 5</h3>
-  <h4 class="fragment">aka ES5</h4>
   <p class="fragment">Finalized in 2009</p>
   <div class="fragment">
     <pre class="highlight javascript" contenteditable>Object.keys()
@@ -202,11 +201,21 @@ Array.filter()</pre>
 
 <section data-background="#D4F1FF" id="es6">
   <h2>In 2015</h2>
-  <p class="fragment">6 years since ES5</p>
-  <h3 class="fragment">ECMAScript Version 6</h3>
-  <h4 class="fragment">aka ES6</h4>
-  <h4 class="fragment">aka ES2015</h4>
+  <p class="fragment">6 years since ECMAScript Version 5</p>
+  <br />
+  <h2 class="fragment">ECMAScript Version 6</h2>
   <p class="fragment"><img src="images/approved.jpg" style="width: 30%; border: 0;" /></p>
+</section>
+
+<section data-background="#C7E3EF" id="es6-names">
+  <h2>ECMAScript Version 6</h2>
+  <p>Also known as...</p>
+  <ul>
+    <li class="fragment">ES2015 <span class="fragment" style="font-size: 60%">(official name)</span></li>
+    <li class="fragment">ES6</li>
+    <li class="fragment">Harmony</li>
+    <li class="fragment">es-next</li>
+  </ul>
 </section>
 
 <section data-background="#C7E3EF" id="es6-whats-new">
@@ -283,14 +292,6 @@ Array.filter()</pre>
     <li class="fragment">Maps</li>
     <li class="fragment">...MORE!</li>
   </ul>
-  <aside class="notes">
-    <ul>
-      <li>These features are amazing</li>
-      <li>As you will soon see</li>
-      <li>They have existed in some Javascript transpilers;</li>
-      <li>Coffeescript, Typescript</li>
-    </ul>
-  </aside>
 </section>
 
 <section data-background="#93C0E7" data-transition="fade" id="why-one-way">
@@ -361,11 +362,6 @@ Array.filter()</pre>
       </ul>
     </div>
   </div>
-  <aside class="notes">
-    <ul>
-      <li>Talk about Coffeescript</li>
-    </ul>
-  </aside>
 </section>
 
 <section data-background="#D4F1FF" id="why-left-behind">
@@ -402,19 +398,6 @@ Array.filter()</pre>
   </ul>
   <p class="fragment">These are all <strong>popular</strong> and <strong>influential</strong> frameworks</p>
   <p class="fragment">They are all using ES6 <strong>now</strong>!</p>
-  <aside class="notes">
-    <ul>
-      <li>These frameworks are leveraging the power of ES6</li>
-      <li>Ember.js - right now has implemented ES6 modules and promises</li>
-      <li>
-        You can write ES5 with these frameworks.
-        <ul>
-          <li>It will be clunky in comparison</li>
-          <li>Documentation and online code will use ES6</li>
-        </ul>
-      </li>
-    </ul>
-  </aside>
 </section>
 
 <section data-background="#93C0E7" id="why-clean">
@@ -435,6 +418,11 @@ Array.filter()</pre>
     <li class="fragment">Javascript is <strong>catching up</strong> to other languages</li>
     <li class="fragment">These are <strong>exciting times</strong>!</li>
   </ul>
+  <aside class="notes">
+    <ul>
+      <li>Coffeescript, Typescript</li>
+    </ul>
+  </aside>
 </section>
 
 <section data-background="images/approval.gif" id="yay"></section>
@@ -708,7 +696,7 @@ var numbers = [1, 5, 10];
 </section>
 
 <section data-background="#AFDCFB" id="let">
-  <h2><em>#1.</em> Let keyword</h2>
+  <h2><em>#1.</em> <span class="fragment">Let keyword</span></h2>
   <p class="fragment">Limits variable to block scope</p>
 
   <pre class="fragment highlight javascript" contenteditable>
@@ -723,7 +711,7 @@ if (true) {
 </section>
 
 <section data-background="#AFDCFB" id="let-2">
-  <pre class="fragment highlight javascript" contenteditable>
+  <pre class="highlight javascript" contenteditable>
 let numbers = [1, 5, 10];
 <span class="fragment">let result = 0;</span>
 <span class="fragment">for (let i = 0; i < numbers.length; i++) {
@@ -940,7 +928,7 @@ const y = position[1];</pre>
 const [x, y] = position;</pre>
 </section>
 
-<section data-background="#AFDCFB" id="destructuring-2">
+<section data-background="#AFDCFB" id="destructuring-spreads">
   <h2><em>#10.</em> Destructuring</h2>
   <p class="fragment">Works with spreads</p>
   <pre class="fragment highlight javascript" contenteditable>
@@ -948,7 +936,11 @@ const [a, b, ...rest] = [1, 2, 3, 4, 5];
 <span class="fragment">console.log( a ); <span class="fragment">// 1</span></span>
 <span class="fragment">console.log( b ); <span class="fragment">// 2</span></span>
 <span class="fragment">console.log( rest ); <span class="fragment">// [3, 4, 5]</span></span></pre>
-  <p class="fragment">Works even better with objects</p>
+</section>
+
+<section data-background="#AFDCFB" id="destructuring-objects">
+  <h2><em>#10.</em> Destructuring</h2>
+  <p>Works even better with objects</p>
 <pre class="fragment highlight javascript" contenteditable>
 function getPosition() {
   return { x: 50, y: 200, z: 13 };
@@ -958,6 +950,9 @@ const { x, y } = getPosition();</pre>
   <pre class="fragment highlight javascript" contenteditable>
 const { z : zIndex } = getPosition();
 <span class="fragment">console.log( zIndex ); // 13</span></pre>
+  <pre class="fragment highlight javascript" contenteditable>
+const { a = 0 } = getPosition();
+<span class="fragment">console.log( a ); // 0</span></pre>
 </section>
 
 <section data-background="#93C0E7" id="object-shorthand">
@@ -983,7 +978,8 @@ function getPosition(something) {
     z
   };</span>
 
-  <span class="fragment">return { x, y, z };</span>
+  <span class="fragment">// ES6
+  return { x, y, z };</span>
 }</pre>
 </section>
 
@@ -1642,7 +1638,7 @@ displayMessage('Default message');
         </ul>
         <div class="fragment">
           <img src="images/best-practise-bear.png" class="inline" style="position: relative; top: 30px" />
-          I love you
+          Boom!
         </div>
       </div>
   </div>
@@ -1673,10 +1669,27 @@ const errorMessage = {
   <h2><em>#18.</em> Class</h2>
   <p class="fragment"><strong>Custom</strong> type of object</p>
   <p class="fragment">Has its own <strong>functions</strong> and <strong>properties</strong></p>
-  <pre class="fragment highlight javascript" contenteditable>
+  <pre class="fragment highlight javascript current-display" contenteditable>const myObject = new Object();</pre>
+  <pre class="fragment highlight javascript current-display" contenteditable>const myArray = new Array();</pre>
+  <pre class="fragment highlight javascript" contenteditable>const myCustomObject = new CustomObject();
+<span class="fragment">myCustomObject.exampleFunction();</span>
+<span class="fragment">myCustomObject.exampleProperty = 'testing';</span>
+<span class="fragment">console.log( myCustomObject.exampleProperty );</span><span class="fragment"> // 'testing'</span></pre>
+  <pre class="fragment highlight javascript" contenteditable>class CustomObject {
+  <span class="fragment">exampleFunction() {
+    <span class="fragment">this.exampleProperty = 'testing';</span>
+  }</span>
+  <span class="fragment">anotherExampleFunction() {
+    this.exampleFunction();
+  }</span>
+}</pre>
+</section>
+
+<section data-background="#AFDCFB" id="class-message">
+  <pre class="highlight javascript" contenteditable>
 class Message {
   <span class="fragment">getContent() {
-    return 'Hello, I am a message';
+    <span class="fragment">return 'Hello, I am a message';</span>
   }</span>
 }
 
@@ -1692,19 +1705,21 @@ class Message {
 <section data-background="#AFDCFB" id="class-loc">
   <p>All these lines of code to create messages?!</p>
   <pre class="fragment highlight javascript" contenteditable>
-class TestMessage {
+// Create test message
+<span class="fragment">class TestMessage {
   getContent() {
-    return 'Hello, I am a message';
+    return 'Hello, I am a test message';
   }
-}
-const myTestMessage = new TestMessage();
+}</span>
+<span class="fragment">const myTestMessage = new TestMessage();</span>
 
+<span class="fragment">// Create error message</span>
 <span class="fragment">class ErrorMessage {
   getContent() {
     return 'Something went wrong!';
   }
-}
-const myErrorMessage = new ErrorMessage();</span></pre>
+}</span>
+<span class="fragment">const myErrorMessage = new ErrorMessage();</span></pre>
   <div class="fragment" style="position: relative; top: -50px;">
     <img src="images/best-practise-bear.png" class="inline" width="100" style="position: relative; top: 45px; left: -10px" />
     A class represents a <strong>template</strong> for creating objects
@@ -1712,15 +1727,18 @@ const myErrorMessage = new ErrorMessage();</span></pre>
 </section>
 
 <section data-background="#AFDCFB" id="class-loc-2">
-  <p>Just one class / template<span class="fragment"> - <strong>Message</strong></span></p>
-  <pre class="highlight javascript" contenteditable>
-<span class="fragment">const myMessage = new Message();</span>
-<span class="fragment">myMessage.setContent('Hello, I am a message');</span>
-<span class="fragment">console.log( myMessage.getContent() );<span class="fragment"> // Hello, I am a message!</span></span>
+  <p>Just one class / template: <strong>Message</strong></p>
+  <pre class="fragment highlight javascript" contenteditable>
+const myTestMessage = new Message();
+<span class="fragment">myTestMessage.setContent('Hello, I am a test message');</span>
 
-<span class="fragment">const errorMessage = new Message();</span>
-<span class="fragment">errorMessage.setContent('Something went wrong!');</span>
-<span class="fragment">console.log( errorMessage.getContent() );<span class="fragment"> // Something went wrong!</span></pre>
+<span class="fragment">const myErrorMessage = new Message();</span>
+<span class="fragment">myErrorMessage.setContent('Something went wrong!');</span></pre>
+
+  <pre class="fragment highlight javascript" contenteditable style="font-size: 50%">
+<span class="fragment">console.log( myTestMessage.getContent() );<span class="fragment"> // Hello, I am a test message!</span></span>
+<span class="fragment">console.log( myErrorMessage.getContent() );<span class="fragment"> // Something went wrong!</span></pre>
+
   <pre class="fragment highlight javascript" contenteditable>
 class Message {
   <span class="fragment">setContent(content) {
@@ -1730,7 +1748,7 @@ class Message {
     <span class="fragment">return this.content;</span>
   }
 </span>}</pre>
-  <div class="fragment" style="position: relative; top: -50px;">
+  <div class="fragment" style="position: relative; top: -70px;">
     <img src="images/best-practise-bear.png" class="inline" width="100" style="position: relative; top: 45px; left: -10px" />
     Aw yeah!
   </div>
@@ -1761,9 +1779,9 @@ class Message {
 </section>
 
 <section data-background="#93C0E7" id="class-getter-setter-problem">
-  <div class="fragment" style="position: relative; top: -50px;">
+  <div style="position: relative; top: -50px;">
     <img src="images/anteater.png" class="inline" width="100" style="position: relative; top: 45px; left: -10px" />
-    I see a bug!
+    <span class="fragment">I see a bug!</span>
   </div>
   <pre class="fragment highlight javascript" contenteditable>
 class Message {
@@ -1809,7 +1827,7 @@ class Message {
   <p class="fragment">You're right!</p>
   <p class="fragment">A <strong>regular object</strong> does getters and setters</p>
   <pre class="fragment highlight javascript" contenteditable>
-<span class="fragment">const myMessage = {};</span>
+<span class="fragment">const myMessage = new Object();</span>
 <span class="fragment">myMessage.content = 'Hello, I am a test message';</span>
 <span class="fragment">console.log( myMessage.content ); // Hello, I am a test message</span></pre>
   <pre class="fragment highlight javascript" contenteditable>
@@ -1819,9 +1837,7 @@ class Message {
   <pre class="fragment highlight javascript" contenteditable>
 <span class="fragment">const myMessage = new Message();</span>
 <span class="fragment">myMessage.content = 'Hello, I am a test message';</span>
-<span class="fragment">console.log( myMessage.content ); // Hello, I am a test message</span>
-<span class="fragment">myMessage.whatever = 'Anything goes';</span>
-<span class="fragment">console.log( myMessage.whatever ); // Anything goes</span></pre>
+<span class="fragment">console.log( myMessage.content ); // Hello, I am a test message</span></pre>
 </section>
 
 <section data-background="#93C0E7" id="class-clever">
@@ -1839,16 +1855,11 @@ class Message {
 
   }</span>
 
-  <span class="fragment">get priority() {
-    return this._priority;
-  }</span>
 }</pre>
   <pre class="fragment highlight javascript full" contenteditable>
 <span class="fragment">const myMessage = new Message();</span>
 <span class="fragment">myMessage.priority = 20;</span><span class="fragment"> // ERROR: Priority must be between 1 and 10</span>
-<span class="fragment">myMessage.priority = 5;</span>
-<span class="fragment">console.log( myMessage.priority );</span><span class="fragment"> // 5</span>
-</pre>
+<span class="fragment">myMessage.priority = 5;</span></pre>
 </section>
 
 <section data-background="#93C0E7" id="class-clever-2">
@@ -1860,9 +1871,9 @@ class Message {
 }</pre>
 <pre class="fragment highlight javascript full" contenteditable style="font-size: 52%">
 <span class="fragment">const myMessage = new Message();</span>
-<span class="fragment">myMessage.content = 'Hello, this is a test message';</span>
-<span class="fragment">myMessage.priority = 5;</span>
 <span class="fragment">myMessage.timestamp = new Date();</span>
+<span class="fragment">myMessage.priority = 5;</span>
+<span class="fragment">myMessage.content = 'Hello, this is a test message';</span>
 <span class="fragment">console.log( myMessage.log );</span>
 <span class="fragment">// Mon Nov 16 2015 20:24:01 GMT+0000 (GMT) - [5] Hello, this is a test message</span></pre>
   <p class="fragment">Wouldn't it be nice if <strong>timestamp</strong> was automatically set?</p>
@@ -1870,12 +1881,12 @@ class Message {
 
 <section data-background="#AFDCFB" id="class-constructor">
   <h2><em>#20.</em> Class constructors</h2>
-  <p>Function that runs when the class is created</p>
+  <p>Special function named <strong>constructor</strong></p>
+  <p class="fragment">Automatically runs when the class is created</p>
   <pre class="fragment highlight javascript" contenteditable>
 class Message {
   <span class="fragment">constructor() {
     <span class="fragment">this.timestamp = new Date();</span>
-    <span class="fragment">this.priority = 5;</span>
   }</span>
 }</pre>
   <pre class="fragment highlight javascript" contenteditable style="font-size: 52%">
@@ -1889,13 +1900,13 @@ class Message {
   <pre class="fragment highlight javascript" contenteditable>
 class Message {
   constructor(content) {
-    this.content = content;
     this.timestamp = new Date();
-    this.priority = 5;
+    this.content = content;
   }
 }</pre>
   <pre class="fragment highlight javascript" contenteditable>
-const testMessage = new Message('This is a test message');</pre>
+const myTestMessage = new Message('Hello, this is a test message');
+<span class="fragment">const myErrorMessage = new Message('Something went wrong!');</span></pre>
 </section>
 
 <section data-background="#93C0E7" id="class-extends">
@@ -1985,7 +1996,7 @@ const debugMessages = messages.filter(function(message) {
   return message.priority === 1;
 });</pre>
   <pre class="fragment highlight javascript" contenteditable>
-//ES6
+// ES6
 const debugMessages = messages.filter((message) => {
   return message.priority === 1;
 });</pre>
@@ -2043,7 +2054,7 @@ function(param1, param2) {
   <p class="fragment">They look different... <span class="fragment"><strong>so what?</strong></span></p>
 </section>
 
-<section data-background="#AFDCFB" id="arrow-functions-class">
+<section data-background="#AFDCFB" data-transition="fade" id="arrow-functions-class">
   <p>
     <img src="images/anteater.png" class="inline" width="100" style="position: relative; top: 45px; left: -10px" />
     <span class="fragment">What's wrong with this code?</span>
@@ -2057,10 +2068,32 @@ class Message {
   }</span>
 
   <span class="fragment">increasePriorityEverySecond() {
-    setInterval(function() {
-      this.priority = this.priority + 1;
-    }, 1000);
+    <span class="fragment">setInterval(function() {</span>
+      <span class="fragment">this.priority = this.priority + 1;</span>
+    <span class="fragment">}, 1000);</span>
   }</span>
+
+}</pre>
+</section>
+
+<section data-background="#AFDCFB" data-transition="fade" id="arrow-functions-class-answer">
+  <p>
+    <img src="images/anteater.png" class="inline" width="100" style="position: relative; top: 45px; left: -10px" />
+    <span>What's wrong with this code?</span>
+  </p>
+  <br />
+  <pre class="highlight javascript" contenteditable>
+class Message {
+
+  constructor() {
+    this.priority = 5;
+  }
+
+  increasePriorityEverySecond() {
+    setInterval(function() {
+      <span class="emphasis">this</span>.priority = <span class="emphasis">this</span>.priority + 1;
+    }, 1000);
+  }
 
 }</pre>
 </section>
@@ -2086,7 +2119,7 @@ class Message {
 </section>
 
 <section data-background="#AFDCFB" data-transition="fade" id="arrow-functions-class-3">
-  <p class="fragment">Arrow functions retain <strong>this</strong> from parent scope</p>
+  <p>Arrow functions retain <strong>this</strong> from parent scope</p>
   <pre class="fragment highlight javascript" contenteditable>
 class Message {
   increasePriorityEverySecond() {
@@ -2173,31 +2206,47 @@ export class Message {
   <pre class="fragment highlight javascript" contenteditable>
 // main.js
 
-import { Message } from './message';
+import { Message } from './message.js';
 
 const myMessage = new Message();</pre>
 </section>
 
-<section data-background="#93C0E7" id="modules-multiple">
-  <p>Multiple exports</p>
+<section data-background="#93C0E7" id="modules-export-multiple">
+  <h3>Multiple exports</h3>
   <pre class="fragment highlight javascript" contenteditable>
-// message.js
+// message-utils.js
 
-<span class="fragment">export class Message {
-  // ...
-}</span>
 <span class="fragment">export function displayMessage(message) {
   // ...
+}</span>
+
+<span class="fragment">export function removeMessage(message) {
+  // ...
 }</span></pre>
-  <p class="fragment">Multiple imports</p>
-  <pre class="fragment highlight javascript" contenteditable style="font-size: 49%">
-// main.js
+</section>
 
-import { Message, displayMessage } from './message';
+<section data-background="#93C0E7" id="modules-import-multiple">
+  <h3>Multiple imports</h3>
+  <br />
+  <pre class="highlight javascript" contenteditable>
+import { displayMessage, removeMessage } from './message-utils.js';</pre>
+</section>
 
-<span class="fragment">const myMessage = new Message();</span>
+<section data-background="#93C0E7" id="modules-import-selective">
+  <h3>Selective imports</h3>
+  <br />
+  <pre class="highlight javascript" contenteditable>
+import { removeMessage } from './message-utils.js';</pre>
+</section>
 
-<span class="fragment">displayMessage(myMessage);</span></pre>
+<section data-background="#93C0E7" id="modules-multiple-all">
+  <h3>Import all</h3>
+  <br />
+  <pre class="highlight javascript" contenteditable>
+import * as MessageUtils from './message-utils.js';
+
+<span class="fragment">MessageUtils.displayMessage();
+MessageUtils.removeMessage();</span></pre>
 </section>
 
 <section data-background="#93C0E7" id="modules-alias">
@@ -2209,18 +2258,35 @@ export class Message {}</pre>
 // /app/message.js
 
 export class Message {}</pre>
-  <p class="fragment">Named imports</p>
+</section>
+
+<section data-background="#93C0E7" id="modules-alias-2">
+  <h3>Named imports</h3>
+  <br />
   <pre class="fragment highlight javascript" contenteditable>
 import { Message as MessageVendor } from '/vendor/message.js';
-import { Message as MessageApp } from '/app/message.js';</pre>
+<span class="fragment">import { Message as MessageApp } from '/app/message.js';</span></pre>
+</section>
+
+<section data-background="#93C0E7" id="modules-default">
+  <h3>Default exports</h3>
+  <p class="fragment">One per module</p>
+  <pre class="fragment highlight javascript" contenteditable>
+// message.js
+
+export default class Message {}</pre>
+  <pre class="fragment highlight javascript" contenteditable>
+// main.js
+
+import NameItWhateverYouLike from './message.js'</pre>
 </section>
 
 <section data-background="#D4F1FF" id="modules-bundling">
   <h2>The ES6 Module Problem</h2>
+  <p class="fragment">ES6 only specifies a standard for<br />the <strong>import</strong> & <strong>export</strong> syntax</p>
   <p class="fragment">ES6 <strong>does not</strong> specify a standard for <strong>loading</strong> files</p>
-  <p class="fragment">ES6 <strong>only</strong> specifies a standard for<br />the <strong>import</strong> & <strong>export</strong> syntax</p>
   <pre class="fragment highlight javascript" contenteditable style="font-size: 51%">
-import { nope } from '../the/browser/does/not/know/how/to/load/this/file';
+import { nope } from '../browser/does/not/know/how/to/load/this/file.js';
 </pre>
   <p class="fragment"><strong>Solution</strong></p>
   <ol>
@@ -2231,10 +2297,10 @@ import { nope } from '../the/browser/does/not/know/how/to/load/this/file';
       </ul>
     </li>
     <li class="fragment">
-      Setup your bundling tool to understand ES6 modules
+      Setup bundling tool to understand ES6 modules
       <ul>
         <li class="fragment">
-          Browserify<span class="fragment"> - 'Babelify'</span>
+          Browserify<span class="fragment"> - Babelify</span>
         </li>
         <li class="fragment">
           Webpack<span class="fragment"> - Babel loader</span>
@@ -2244,47 +2310,49 @@ import { nope } from '../the/browser/does/not/know/how/to/load/this/file';
   </ol>
 </section>
 
+<section data-background="#AFDCFB" id="promises-es5-intro">
+  <h2>Prepare yourself...</h2>
+</section>
+
 <section data-background="#AFDCFB" data-transition="fade" id="promises-es5">
-  <h2 class="fragment current-display">Prepare yourself...</h2>
-  <pre class="fragment highlight javascript full" contenteditable style="font-size: 48%">
-testInternetConnection(function() {
-  fetchMessagesFromServer(function(messages) {
-    messages = JSON.parse(messages);
-    if (messages[0] == null) {
-      displayError('Could not email first message');
-      logger.log('First message does not exist');
-    } else {
-      sendEmail(
-        'test@example.com',
-        'Here is the first message: ' + messages[0],
-        function() {
+  <pre class="highlight javascript full" contenteditable style="font-size: 48%">
+<span class="fragment">testInternetConnection(function() {</span>
+  <span class="fragment">fetchMessagesFromServer(function(messages) {</span>
+    <span class="fragment">messages = JSON.parse(messages);</span>
+    <span class="fragment">if (messages[0] === null) {</span>
+      <span class="fragment">displayError('Could not email first message');</span>
+      <span class="fragment">logger.log('First message does not exist');</span>
+    <span class="fragment">} else {</span>
+      <span class="fragment">sendEmail(</span>
+        <span class="fragment">'test@example.com',</span>
+        <span class="fragment">'Here is the first message: ' + messages[0],</span>
+        <span class="fragment">function() {
           displayMessage('Success!');
-        },
-        function(error) {
+        },</span>
+        <span class="fragment">function(error) {
           displayError('Could not email first message');
           logger.log('Error sending email: ' + error);
-        }
-      );
-    }
-  }, function(error) {
+        }</span>
+      <span class="fragment">);</span>
+    <span class="fragment">}</span>
+  <span class="fragment">}</span><span class="fragment">, function(error) {
     displayError('Could not email first message');
     logger.log('Error fetching messages from server: ' + error);
-  });
-}, function(error) {
+  });</span>
+<span class="fragment">},<span class="fragment"> function(error) {
   displayError('Could not email first message');
   logger.log('Internet connection test failed: ' + error);
-});</pre>
+});</span></pre>
 </section>
 
 <section data-background="#93C0E7" data-transition="fade" id="promises-es5-2">
-  <h2 class="fragment current-display">Is this better?</h2>
-  <pre class="fragment highlight javascript full" contenteditable style="font-size: 46%">
+  <pre class="highlight javascript full" contenteditable style="font-size: 46%">
 testInternetConnection({
   onComplete: function() {
     fetchMessagesFromServer({
       onComplete: function(messages) {
         messages = JSON.parse(messages);
-        if (messages[0] == null) {
+        if (messages[0] === null) {
           displayError('Could not email first message');
           logger.log('First message does not exist');
         } else {
@@ -2314,8 +2382,92 @@ testInternetConnection({
 });</pre>
 </section>
 
+<section data-background="#93C0E7" data-transition="fade" id="promises-es5-3">
+  <pre class="highlight javascript full" contenteditable style="font-size: 46%">
+testInternetConnection()
+  .done(function() {
+    fetchMessagesFromServer()
+      .done(function(messages) {
+        messages = JSON.parse(messages);
+        if (messages[0] === null) {
+          displayError('Could not email first message');
+          logger.log('First message does not exist');
+        } else {
+          sendEmail({
+            email: 'test@example.com',
+            message: 'Here is the first message: ' + messages[0]
+          })
+            .done(function() {
+              displayMessage('Success!');
+            })
+            .error(function(error) {
+              displayError('Could not email first message');
+              logger.log('Error sending email: ' + error);
+            });
+        }
+      })
+      .error(function(error) {
+        displayError('Could not email first message');
+        logger.log('Error fetching messages from server: ' + error);
+      });
+  })
+  .error(function(error) {
+    displayError('Could not email first message');
+    logger.log('Internet connection test failed: ' + error);
+  });</pre>
+</section>
+
+<section data-background="#93C0E7" data-transition="fade" id="promises-es5-4">
+  <pre class="highlight javascript full" contenteditable style="font-size: 35%">
+testInternetConnection()
+  .done(testInternetConnectionDone)
+  .error(testInternetConnectionError);
+
+function testInternetConnectionDone() {
+  fetchMessagesFromServer()
+    .done(fetchMessagesFromServerDone)
+    .error(fetchMessagesFromServerError)
+}
+
+function testInternetConnectionError(error) {
+  displayError('Could not email first message');
+  logger.log('Internet connection test failed: ' + error);
+}
+
+function fetchMessagesFromServerDone(messages) {
+  messages = JSON.parse(messages);
+  if (messages[0] === null) {
+    displayError('Could not email first message');
+    logger.log('First message does not exist');
+  } else {
+    sendEmail({
+      email: 'test@example.com',
+      message: 'Here is the first message: ' + messages[0]
+    })
+      .done(sendEmailDone)
+      .error(sendEmailError);
+  }
+}
+
+function fetchMessagesFromServerDoneError() {
+  displayError('Could not email first message');
+  logger.log('Error fetching messages from server: ' + error);
+}
+
+function sendEmailDone() {
+  displayMessage('Success!');
+}
+
+function sendEmailError(error) {
+  displayError('Could not email first message');
+  logger.log('Error sending email: ' + error);
+}</pre>
+</section>
+
 <section data-background="#93C0E7" id="promises">
-  <p>There's a better way...</p>
+  <img src="images/best-practise-bear.png" class="inline" width="100" style="position: relative; top: 45px; left: -10px" />
+  <span class="fragment">There's a better way...</span>
+  <br /><br /><br />
   <h2 class="fragment"><em>#24.</em> Promises</h2>
 </section>
 
@@ -2325,23 +2477,27 @@ testInternetConnection({
 
   <span class="fragment">// This function takes time</span>
   <span class="fragment">// Return to caller a Promise object straight away</span>
-  <span class="fragment">// After some time has passed, update the Promise with either;</span>
-  <span class="fragment">// 1. A value (yay)</span>
-  <span class="fragment">// 2. An error (aw)</span>
 
-  <span class="fragment">return new Promise</span><span class="fragment">(function(resolve, reject) {</span>
+  <span class="fragment">return new Promise(<span class="fragment">function(resolve, reject) {</span>
 
-    <span class="fragment">jQuery.get('http://example.com/messages.json')</span><span class="fragment"> // (time passes)</span>
+    <span class="fragment">// After some time has passed, update the Promise</span>
+    <span class="fragment">// Two types of updates;</span>
+    <span class="fragment">// 1. Resolve (yay) with a value</span>
+    <span class="fragment">// 2. Reject (aw) with a value</span>
+
+    <span class="fragment">jQuery.get('http://example.com/messages.json')</span><span class="fragment"> // time passes</span>
       <span class="fragment">.done(function(result) {
-        <span class="fragment">// Update the Promise with a value</span>
+        <span class="fragment">// Update the Promise</span>
+        <span class="fragment">// Resolve, and pass in the result</span>
         <span class="fragment">resolve(result);</span>
       })</span>
       <span class="fragment">.fail(function() {
-        <span class="fragment">// Update the Promise with an error</span>
+        <span class="fragment">// Update the Promise</span>
+        <span class="fragment">// Reject, and pass in an error message</span>
         <span class="fragment">reject('Could not fetch messages from server');</span>
-      })</span>
+      });</span>
 
-  <span class="fragment">});</span>
+  });</span>
 
 }</span></pre>
 </section>
@@ -2494,7 +2650,7 @@ testInternetConnection()
     <span class="fragment">return JSON.parse(messages);</span>
   })</span>
   <span class="fragment">.then(function(messages) {
-    <span class="fragment">if (messages[0] == null) {
+    <span class="fragment">if (messages[0] === null) {
       throw new Error('First message does not exist');
     } else {
       return messages[0];
@@ -2528,7 +2684,7 @@ testInternetConnection()
 </section>
 
 <section data-background="#D4F1FF" id="promises-best">
-  <pre class="highlight javascript full" contenteditable style="font-size: 47%">
+  <pre class="highlight javascript full" contenteditable style="font-size: 48%">
 <span class="fragment">class MessageService {
   <span class="fragment">fetchMessagesAsJson() {
     <span class="fragment">return testInternetConnection()</span>
@@ -2539,22 +2695,20 @@ testInternetConnection()
 
 <span class="fragment">class MessageEmailer {
   <span class="fragment">_getFirstMessage(messages) {
-    <span class="fragment">if (messages[0] == null) {
+    <span class="fragment">if (messages[0] === null) {
       throw new Error('First message does not exist');
-    } else {
-      return messages[0];
-    }</span>
+    }
+    return messages[0];</span>
   }</span>
-  <span class="fragment">_emailMessage(message) {
-    <span class="fragment">return sendEmail(
-      this.email,
-      'Here is the message: ' + message
-    );</span>
+
+  <span class="fragment">_emailMessage(email, message) {
+    <span class="fragment">return sendEmail(email, 'Here is the message: ' + message);</span>
   }</span>
+
   <span class="fragment">send(email) {
     <span class="fragment">MessageService.fetchMessagesAsJson()</span>
       <span class="fragment">.then(this._getFirstMessage)</span>
-      <span class="fragment">.then(this._emailMessage)</span>
+      <span class="fragment">.then(firstMessage => this._emailMessage(email, firstMessage))</span>
       <span class="fragment">.then(() => displayMessage('Success!'))</span>
       <span class="fragment">.catch((error) => {
         displayError('Could not email message');
@@ -2577,8 +2731,9 @@ testInternetConnection()
   <p class="fragment" style="text-align: left">Yes, there are more...</p>
   <ul class="fragment" style="width: 80%">
     <li>Symbols</li>
-    <li>Proxies</li>
+    <li>Creating custom iterators</li>
     <li>Generators</li>
+    <li>Proxies</li>
     <li>... EVEN MORE!</li>
   </ul>
 </section>
@@ -2591,11 +2746,8 @@ testInternetConnection()
 
 <section data-background="#AFDCFB" id="done-links">
   <h2>Links</h2>
+  <p style="margin: 50px 0">http://turnbullm.github.io/js-2015-preso</p>
   <table style="font-size: 80%; width: 100%">
-    <tr>
-      <th style="width: 25%">This</th>
-      <td>turnbullm.github.io/javascript-2015-presentation</td>
-    </tr>
     <tr>
       <th>Summary</th>
       <td>github.com/lukehoban/es6features</td>
@@ -2603,6 +2755,10 @@ testInternetConnection()
     <tr>
       <th>Detail</th>
       <td>es6-features.org</td>
+    </tr>
+    <tr>
+      <th>350 bullet points</th>
+      <td>ponyfoo.com/articles/es6</td>
     </tr>
     <tr>
       <th>Interactive lessons</th>
