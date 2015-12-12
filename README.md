@@ -7,8 +7,8 @@ After 6 years, Javascript standards have updated
 - 25 best new features, with code examples and best practises
 - How to use these features right now
 
-View
-----
+View online
+-----------
 
 - [Intro](http://turnbullm.github.io/js-2015-preso/)
 - [7 reasons why you should care](http://turnbullm.github.io/js-2015-preso/#/preso-why)
