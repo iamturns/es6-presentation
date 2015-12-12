@@ -7,9 +7,37 @@ After 6 years, Javascript standards have updated
 - 25 best new features, with code examples and best practises
 - How to use these features right now
 
-View online @ [http://turnbullm.github.io/js-2015-preso](http://turnbullm.github.io/js-2015-preso/)
+View
+----
 
-Presented @ [AnalogFolk](http://analogfolk.com) on (TBC)
+- [Intro](http://turnbullm.github.io/js-2015-preso/)
+- [7 reasons why you should care](http://turnbullm.github.io/js-2015-preso/#/preso-why)
+- [Browser support](http://turnbullm.github.io/js-2015-preso/#/browser-support-intro)
+- [Babel](http://turnbullm.github.io/js-2015-preso/#/babel)
+- [25 features of ES6](http://turnbullm.github.io/js-2015-preso/#/es6-intro)
+    - [Let](http://turnbullm.github.io/js-2015-preso/#/let-intro)
+    - [Constant](http://turnbullm.github.io/js-2015-preso/#/constants)
+    - [New string functions](http://turnbullm.github.io/js-2015-preso/#/string-features)
+    - [New array functions](http://turnbullm.github.io/js-2015-preso/#/array-features)
+    - [Array.from](http://turnbullm.github.io/js-2015-preso/#/array-from)
+    - [Spread](http://turnbullm.github.io/js-2015-preso/#/array-spread-es5)
+    - [Destructuring](http://turnbullm.github.io/js-2015-preso/#/destructuring)
+    - [Object shorthand](http://turnbullm.github.io/js-2015-preso/#/object-shorthand)
+    - [Template literals](http://turnbullm.github.io/js-2015-preso/#/template-literals)
+    - [Sets](http://turnbullm.github.io/js-2015-preso/#/sets-challenge)
+    - [Weak Sets](http://turnbullm.github.io/js-2015-preso/#/weak-sets-challenge)
+    - [Maps](http://turnbullm.github.io/js-2015-preso/#/maps)
+    - [Weak Maps](http://turnbullm.github.io/js-2015-preso/#/weak-maps)
+    - [for of](http://turnbullm.github.io/js-2015-preso/#/iterators)
+    - [Default parameters](http://turnbullm.github.io/js-2015-preso/#/default-parameters)
+    - [Class](http://turnbullm.github.io/js-2015-preso/#/class-intro)
+    - [Class Getters & Setters](http://turnbullm.github.io/js-2015-preso/#/class-getter-setter)
+    - [Class Constructors](http://turnbullm.github.io/js-2015-preso/#/class-constructor)
+    - [Sub classing](http://turnbullm.github.io/js-2015-preso/#/class-extends)
+    - [Arrow functions](http://turnbullm.github.io/js-2015-preso/#/arrow-functions)
+    - [Modules](http://turnbullm.github.io/js-2015-preso/#/modules)
+    - [Promises](http://turnbullm.github.io/js-2015-preso/#/promises-es5-intro)
+- [Wrap up & links](http://turnbullm.github.io/js-2015-preso/#/done)
 
 Reveal.js
 ---------

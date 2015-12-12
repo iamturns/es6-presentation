@@ -230,7 +230,7 @@ Array.filter()</pre>
   <h2>What you're about to learn</h2>
   <ul>
     <li class="fragment">
-        24 new features of ES6
+        25 new features of ES6
         <ul>
           <li class="fragment">Code examples</li>
           <li class="fragment">Best practises</li>
@@ -623,7 +623,7 @@ require("babel-core/register");
 
 <section data-background="#D4F1FF" id="es6-intro">
   <h2>Let's learn ES6</h2>
-  <p class="fragment">24 new features</p>
+  <p class="fragment">25 new features</p>
   <div class="fragment">
     <strong>Barry&nbsp;&nbsp;&nbsp;</strong>
     <img src="images/best-practise-bear.png" class="inline" width="100" style="position: relative; top: 45px; left: -10px" />
@@ -782,29 +782,11 @@ const testString = 'anthony';</pre>
 <span class="fragment">testString.endsWith('hon', testString.length - 1);<span class="fragment"> // true</span></span></pre>
 </section>
 
-<section data-background="#D4F1FF" id="array-from">
-  <h2><em>#6.</em> Array.from()</h2>
-  <p class="fragment">Converts objects to an array</p>
-  <pre class="fragment highlight javascript" contenteditable>
-const myArray = Array.from(notAnArray);</pre>
-  <p class="fragment" style="text-align: left">
-    Works with either;
-    <ul style="width: 100%">
-      <li class="fragment" style="font-size: 90%">Objects that are <strong>iterable</strong><span style="font-size: 70%"> (can be looped)</span></li></li>
-      <li class="fragment" style="font-size: 90%">Objects with a <strong>length</strong> property, and <strong>indexed elements</strong></li>
-    </ul>
-  </p>
-  <pre class="fragment highlight javascript" contenteditable>
-Array.from(document.querySelectorAll('img'));
-<span class="fragment">Array.from(jQuery('img'));</span>
-<span class="fragment">Array.from("test"); // ["t", "e", "s", "t"]</span></pre>
-</section>
-
-<section data-background="#AFDCFB" id="array-find">
+<section data-background="#AFDCFB" id="array-features">
   <h2>New array functions</h2>
   <ul>
-    <li class="fragment"><em>#7.</em> array.find()</li>
-    <li class="fragment"><em>#8.</em> array.findIndex()</li>
+    <li class="fragment"><em>#6.</em> array.find()</li>
+    <li class="fragment"><em>#7.</em> array.findIndex()</li>
   </ul>
   <pre class="fragment highlight javascript" contenteditable style="font-size: 50%">
 const friends = [
@@ -827,6 +809,24 @@ const friends = [
   return friend.name === 'Barry';
 });</span>
 <span class="fragment">console.log( myBestFriendIndex );</span><span class="fragment"> // 0</span></pre>
+</section>
+
+<section data-background="#D4F1FF" id="array-from">
+  <h2><em>#8.</em> Array.from()</h2>
+  <p class="fragment">Converts objects to an array</p>
+  <pre class="fragment highlight javascript" contenteditable>
+const myArray = Array.from(notAnArray);</pre>
+  <p class="fragment" style="text-align: left">
+    Works with either;
+    <ul style="width: 100%">
+      <li class="fragment" style="font-size: 90%">Objects that are <strong>iterable</strong><span style="font-size: 70%"> (can be looped)</span></li></li>
+      <li class="fragment" style="font-size: 90%">Objects with a <strong>length</strong> property, and <strong>indexed elements</strong></li>
+    </ul>
+  </p>
+  <pre class="fragment highlight javascript" contenteditable>
+Array.from(document.querySelectorAll('img'));
+<span class="fragment">Array.from(jQuery('img'));</span>
+<span class="fragment">Array.from("test"); // ["t", "e", "s", "t"]</span></pre>
 </section>
 
 <section data-background="#93C0E7" id="array-spread-es5">
