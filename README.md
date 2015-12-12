@@ -7,10 +7,15 @@ After 6 years, Javascript standards have updated
 - 25 best new features, with code examples and best practises
 - How to use these features right now
 
-View online
------------
+View online @ [http://turnbullm.github.io/js-2015-preso](http://turnbullm.github.io/js-2015-preso/)
 
-- [Intro & brief Javascript history](http://turnbullm.github.io/js-2015-preso/)
+Sections
+--------
+
+- [Intro](http://turnbullm.github.io/js-2015-preso/#/intro)
+- [Ecma International](http://turnbullm.github.io/js-2015-preso/#/ecma-intro)
+- [ES5](http://turnbullm.github.io/js-2015-preso/#/es5)
+- [ES6 intro](http://turnbullm.github.io/js-2015-preso/#/es6)
 - [7 reasons why you should care](http://turnbullm.github.io/js-2015-preso/#/preso-why)
 - [Browser support](http://turnbullm.github.io/js-2015-preso/#/browser-support-intro)
 - [Babel](http://turnbullm.github.io/js-2015-preso/#/babel)
