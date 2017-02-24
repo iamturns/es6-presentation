@@ -1,5 +1,5 @@
-Javascript 2015 Presentation
-============================
+ES6 Presentation
+================
 
 After 6 years, Javascript standards have updated
 
@@ -7,7 +7,7 @@ After 6 years, Javascript standards have updated
 - 25 best new features, with code examples and best practises
 - How to use these features right now
 
-View online @ [http://turnbullm.github.io/js-2015-preso](http://turnbullm.github.io/js-2015-preso/)
+View online @ [http://turnbullm.github.io/es6-preso](http://turnbullm.github.io/es6-preso/)
 
 Usage
 -----
